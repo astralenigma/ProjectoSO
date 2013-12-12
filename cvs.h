@@ -12,17 +12,17 @@ semaphore mutex;
 
 typedef enum {
 frescos='f',alimentar='v',npereciveis='n'
-}TipodeProduto;
+}TipoDeProduto;
 
 typedef struct {
-tipodeproduto tp;
+TipoDeProduto tp;
 int datavalidade;
 int destino;
 }Produto;
 
 
 typedef struct {
-produto p;
+Produto p;
 }Contentor;
 
 typedef struct {
