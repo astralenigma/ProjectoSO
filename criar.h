@@ -1,7 +1,8 @@
 #include "cvs.h"
 
 Navio criarNavio(int maxcontentores){
-	Navio nav;
-	nav.empty=init_sem(nav.contentores);
+	srand(time(NULL));
+	int random=(MAX_SCARGO*0.8+(rand()%(int)(MAX_SCARGO*0.2)+1);
+	Navio nav ={init_sem(random)),init_sem(MAX_SCARGO-random)}
 	Return nav;
 }
