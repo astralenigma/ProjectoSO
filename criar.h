@@ -7,3 +7,5 @@ Navio criarNavio(){
 	Navio navio ={(init_sem(random)), (init_sem(MAX_SCARGO-random))};
 	return navio;
 }
+
+
