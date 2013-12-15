@@ -1,5 +1,9 @@
 #include "sema.h"
+#include "cvs.h"
+#include "Navio.h"
+#include "Camiao.h"
 #include "transferencia.h"
+
 
 
 
