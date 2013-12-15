@@ -26,6 +26,6 @@ Produto p;
 }Contentor;
 
 typedef struct {
-semaphore full;
-semaphore empty;
+int contentoresCheios;
+int contetoresVazios;
 }Navio;
