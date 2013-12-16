@@ -8,8 +8,6 @@
 #define TUNLOADINGTIME	4	/* max. time for unloading cargo from the trucks	*/
 #define TLOADINGTIME	5	/* max. time for unloading cargo from the trucks	*/
 #define SHMKEY (key_t)0x10
-semaphore mutex;
-
 typedef enum {
 frescos='f',alimentar='v',npereciveis='n'
 }TipoDeProduto;
@@ -29,3 +27,6 @@ typedef struct {
 int contentoresCheios;
 int contetoresVazios;
 }Navio;
+
+semaphore mutex;
+Navio *ship;
