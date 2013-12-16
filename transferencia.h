@@ -1,11 +1,3 @@
-semaphore mutexDescarga;
-semaphore fullDescarga;
-semaphore emptyDescarga;
-
-semaphore mutexCarga;
-semaphore fullCarga;
-semaphore emptyCarga;
- 
 
 void inicializarSemaforos(){
 	mutexDescarga=init_sem(1);
@@ -14,6 +6,7 @@ void inicializarSemaforos(){
 	mutexCarga=init_sem(1);
 	fullCarga=init_sem(0);
 	emptyCarga=init_sem(MAX_LZCARGO);
+	semaNaviosAEspera = init_sem(0);
 }
 void descarregarContentorNavio() {
 	int out = 0;
