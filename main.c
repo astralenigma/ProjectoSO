@@ -13,7 +13,7 @@ main(){
 	inicializarSemaforos();
 	shmid = shmget(SHMKEY, MAX_CAMIOES, 0777|IPC_CREAT);
 	addr = (char*) shmat(shmid, 0, 0);
-	for (int i = 0; i < MAX_CHILD; ++i) {
+	for (i = 0; i < MAX_CHILD; ++i) {
 		// printf("%d\n", i);
 		child_pid[i] = fork();
 		switch (child_pid[i]) {
@@ -35,7 +35,7 @@ main(){
 			break;
 			default: /*parent process*/
 				if (i == (MAX_CHILD - 1)) /* all childs created ?*/ { /* yes -> wait for termination	*/
-                    			for (int j = 0; j < MAX_CHILD; ++j) {
+                    			for ( j = 0; j < MAX_CHILD; ++j) {
                         			wait_pid = wait(&child_stat);
 						if (wait_pid == -1) {
 	                            			perror("wait failed");
