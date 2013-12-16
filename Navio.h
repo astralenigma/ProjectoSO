@@ -1,11 +1,10 @@
 
-
 //Metodo que devolve um navio usar para criar o navio.
 Navio criarNavio(void){
 	srand(time(NULL));
 	Navio navio ={(MAX_SCARGO*0.8+(rand()%(int)(MAX_SCARGO*0.2)+1)), 0};
 	return navio;
-}
+};
 
 //Metodo para colocar o navio activo
 atracarNavio(){
@@ -22,5 +21,5 @@ atracarNavio(){
 		//TODO Inserir código de mandar o navio embora
 		
 	}
-}
+};
 
