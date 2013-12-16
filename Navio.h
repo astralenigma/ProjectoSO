@@ -17,12 +17,12 @@ void atracarNavio(void){
 	P(semaNaviosAEspera);
 	nmrNaviosAEspera--;
 	Navio navio ={++nmrNaviosCriados,(MAX_SCARGO*0.8+(rand()%(int)(MAX_SCARGO*0.2)+1)), 0};
-	ship=&navio;
+	ship=navio;
 }
 
 //Metodo que controla as accoes dos navios
 void controloNavio{
-	alarm(LIFETIME);
+	//alarm(LIFETIME);
 	for(;;){
 		atracarNavio();
 		printf("O navio nº %d atracou.",ship.id);
