@@ -10,6 +10,7 @@
 #define MAX_CHILD MAX_CAMIOES + 2
 #define SHMKEY (key_t)0x10
 int child_pid[MAX_CHILD],wait_pid;
+int i,j;
 
 typedef enum {
 frescos=0,alimentar=1,npereciveis=2
