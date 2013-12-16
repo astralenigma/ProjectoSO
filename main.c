@@ -8,7 +8,7 @@
 main(){
 	int shmid;// id da memoria partilhada
 	char *addr;
-	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, 		estadoCliente, child_stat;
+	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
 	int n, numeroCaxa, numeroP;
 	mutex = init_sem(1);		/* exclusao mutua */
 	shmid = shmget(SHMKEY, MAX_CAMIOES, 0777|IPC_CREAT);
@@ -24,12 +24,13 @@ main(){
 			case 0: /*child process*/
                
 				if (i == 0) {
-					printf("criarNavio => %d\n", i);
-					criarNavio();
+					//Processo de criacao
 				}
                 		if (i == 1) {
-					printf("atracarNavio => %d\n", i);          
-                    			atracarNavio();
+					//Processo de carga e descarga do navio
+                		}
+                		if (i =< 2) {
+					//Processo de carga e descarga dos camioes
                 		}
 			break;
 			default: /*parent process*/
