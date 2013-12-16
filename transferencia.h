@@ -33,7 +33,7 @@ int in = 0;
 		P(mutexCarga);
 		//Incrementar o nº de contentores do navio no porto
 		in++;
-		&ship.contentoresVazios++;
+		ship.contentoresVazios++;
 		printf("Foi inserido %d contentores no navio", in);
 		sleep(7);
 		V(emptyCarga);
