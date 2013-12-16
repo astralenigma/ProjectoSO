@@ -44,5 +44,5 @@ semaphore emptyCarga;
 semaphore semaNaviosAEspera;
 semaphore mutex;
 
-Navio *ship;
+Navio ship;
 int nmrNaviosAEspera=0;
