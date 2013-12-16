@@ -30,7 +30,7 @@ Produto p;
 typedef struct {
   int id;
   int contentoresCheios;
-  int contetoresVazios;
+  int contentoresVazios;
 }Navio;
 
 semaphore mutexDescarga;
