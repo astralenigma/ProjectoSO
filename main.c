@@ -29,7 +29,7 @@ main(){
 					controloNavio();
                 		}
                 		if (i =< 2) {
-					//Processo de carga e descarga dos camioes
+					controloCamiao();
                 		}
 			break;
 			default: /*parent process*/
