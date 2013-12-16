@@ -44,17 +44,26 @@ void descarregarContentorNavio() {
 
 void carregarContentorNavio() {
 int in = 0;	
-
-	while(*ship.contentoresVazios<50){//O Ciclo tem de ser alterado
+	
+	while(!(*ship.contentoresVazios>=40&&nmrNaviosAEspera>0)){//O Ciclo tem de ser alterado
 		//Decrementar o nº de contentores na zona de carga (se calhar vai ser necessario usar semaforos)
 		//Alterar os semáforos
+		P(fullCarga);
 		P(mutexCarga);
-		sleep(7);
 		//Incrementar o nº de contentores do navio no porto
 		//Alterar os semáforos
+		in++;
+		*ship.contentoresVazios++;
+		printf("Foi inserido %d contentores no navio", in);
+		sleep(7);
+		V(emptyCarga);
 		V(mutexCarga);
+		
+		}
 	}
-}
+	
+	
+
 
 void carregarContentorCamiao() {
 	for (;;) {//O Ciclo tem de ser alterado
