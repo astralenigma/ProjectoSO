@@ -13,4 +13,12 @@ void descarregarCamiao(){
   descarregarContentorCamiao();
 }
 
-void mover(){};
+void mover(){}
+
+void controloCamiao(){
+  for(;;){
+    carregarCamiao();
+    mover();
+    descarregarCamiao();
+  }
+}
