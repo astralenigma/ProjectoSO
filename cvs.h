@@ -32,6 +32,16 @@ typedef struct {
   int contetoresVazios;
 }Navio;
 
+semaphore mutexDescarga;
+semaphore fullDescarga;
+semaphore emptyDescarga;
+
+semaphore mutexCarga;
+semaphore fullCarga;
+semaphore emptyCarga;
+ 
+semaphore semaNaviosAEspera;
 semaphore mutex;
-Navio *ship;
+
+Navio* ship;
 int nmrNaviosAEspera=0;
