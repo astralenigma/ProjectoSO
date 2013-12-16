@@ -9,7 +9,7 @@
 #define TLOADINGTIME	5	/* max. time for unloading cargo from the trucks	*/
 #define SHMKEY (key_t)0x10
 typedef enum {
-frescos='f',alimentar='v',npereciveis='n'
+frescos=0,alimentar=1,npereciveis=2
 }TipoDeProduto;
 
 typedef struct {
