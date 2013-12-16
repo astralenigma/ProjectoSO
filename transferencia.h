@@ -10,15 +10,7 @@ semaphore emptyDescarga;
 semaphore mutexCarga;
 semaphore fullCarga;
 semaphore emptyCarga;
-
-semaphore mutexCamiaoCarga;
-semaphore fullCamiaoCarga;
-semaphore emptyCamiaoCarga;
-
-semaphore mutexCamiaoDescarga;
-semaphore fullCamiaoDescarga;
-semaphore emptyCamiaoDescarga; 
-
+ 
 
 //Navio 
 
@@ -58,47 +50,50 @@ int in = 0;
 		sleep(7);
 		V(emptyCarga);
 		V(mutexCarga);
-		
-		}
+		if(*ship.contentoresVazios == 50){
+			break;
+		}	
 	}
+}
 	
 	
 
 
 void carregarContentorCamiao() {
-	for (;;) {//O Ciclo tem de ser alterado
+int nmrContentores = 0;	
+	while(nmrContentores == 0 && nmrContentores < 1) {//O Ciclo tem de ser alterado
 		//Decrementar o nº de contentores na zona de descarga (se calhar vai ser necessario usar semaforos)
 		//Alterar os semáforos
-		P(fullDescarga);
-		P(mutexDescarga);
+		P(fullCarga);
+		P(mutexCarga);
 		sleep(5);
 		//Gerar o inventário e caminho
 		//Alterar os semáforos
-		V(emptyCarga)
-		V(mutexCarga);
+		V(emptyDescarga)
+		V(mutexDescarga);
 		
 	}
 }
 
 void descarregarContentorCamiao() {
-int nrContentores =1;
+int nmrContentores =1;
 int out = 0;
 
 		//O Ciclo tem de ser alterado
 		//Incrementar o nº de contentores na zona de carga (se calhar vai ser necessario usar semaforos)
 		//Alterar os semáforos
-		while(nrContentores != 0){
+		while(nmrContentores != 0){
 		
-		P(emptyCamiaoDescarga);
-		P(mutexCamiaoDescarga);
-		nrContentores--;
+		P(emptyDescarga);
+		P(mutexDescarga);
+		nmrContentores--;
 		out++;
 		printf("O Camiao descarregou %d contentores na zona de carga",out);	
 		sleep(5);
 		//Aumentar o nº de contentores na zona de carga (se calhar vai ser necessario usar semaforos)
 		//Alterar os semáforos
-		V(fullCamiaoDescarga);
-		V(mutexCamiaoDescarga);
+		V(fullCarga);
+		V(mutexCarga);
 		
 		}
 }
