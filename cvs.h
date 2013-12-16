@@ -46,3 +46,4 @@ semaphore mutex;
 
 Navio ship;
 int nmrNaviosAEspera=0;
+int nmrNaviosCriados;
