@@ -1,9 +1,8 @@
 #include "sema.h"
 #include "cvs.h"
-#include "Navio.h"
-#include "Camiao.h"
 #include "transferencia.h"
-
+#include "Camiao.h"
+#include "Navio.h"
 
 main(){
 	int shmid;// id da memoria partilhada
@@ -24,10 +23,10 @@ main(){
 			case 0: /*child process*/
                
 				if (i == 0) {
-					//Processo de criacao
+					criarNavio();
 				}
                 		if (i == 1) {
-					//Processo de carga e descarga do navio
+					controloNavio();
                 		}
                 		if (i =< 2) {
 					//Processo de carga e descarga dos camioes
