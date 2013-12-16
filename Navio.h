@@ -1,4 +1,3 @@
-semaphore semaNaviosAEspera = init_sem(0);
 
 //Metodo que devolve um navio usar para criar o navio.
 void criarNavio(void){
