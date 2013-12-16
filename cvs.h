@@ -7,6 +7,7 @@
 #define MAX_LZCARGO	20	/* max. cargo of the loading zone	*/
 #define TUNLOADINGTIME	4	/* max. time for unloading cargo from the trucks	*/
 #define TLOADINGTIME	5	/* max. time for unloading cargo from the trucks	*/
+#define MAX_CHILD MAX_CAMIOES + 2
 #define SHMKEY (key_t)0x10
 typedef enum {
 frescos=0,alimentar=1,npereciveis=2
