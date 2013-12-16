@@ -24,8 +24,9 @@ Produto p;
 }Contentor;
 
 typedef struct {
-int contentoresCheios;
-int contetoresVazios;
+  int id;
+  int contentoresCheios;
+  int contetoresVazios;
 }Navio;
 
 semaphore mutex;
