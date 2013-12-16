@@ -30,4 +30,4 @@ int contetoresVazios;
 
 semaphore mutex;
 Navio *ship;
-int nmrNaviosAEspera=0;
+semaphore nmrNaviosAEspera=init_sem(0);
