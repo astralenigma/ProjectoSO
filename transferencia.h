@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include "sema.h"
-#include "cvs.h"
-#include "Navio.h"
-
 semaphore mutexDescarga;
 semaphore fullDescarga;
 semaphore emptyDescarga;
@@ -11,8 +6,6 @@ semaphore mutexCarga;
 semaphore fullCarga;
 semaphore emptyCarga;
  
-
-//Navio 
 
 //Inserir métodos para transferir os contentores
 void descarregarContentorNavio() {
@@ -55,45 +48,23 @@ int in = 0;
 		}	
 	}
 }
-	
-	
-
 
 void carregarContentorCamiao() {
-int nmrContentores = 0;	
-	while(nmrContentores == 0 && nmrContentores < 1) {//O Ciclo tem de ser alterado
-		//Decrementar o nº de contentores na zona de descarga (se calhar vai ser necessario usar semaforos)
-		//Alterar os semáforos
-		P(fullCarga);
-		P(mutexCarga);
-		sleep(5);
-		//Gerar o inventário e caminho
-		//Alterar os semáforos
-		V(emptyDescarga)
-		V(mutexDescarga);
-		
-	}
+	//Diminuir o nº de contentores na zona de carga 
+	P(fullDescarga);
+	P(mutexDesCarga);
+	sleep(5);
+	//Incrementar o nº de espaços na zona de carga
+	V(emptyDescarga)
+	V(mutexDescarga);
 }
 
 void descarregarContentorCamiao() {
-int nmrContentores =1;
-int out = 0;
-
-		//O Ciclo tem de ser alterado
-		//Incrementar o nº de contentores na zona de carga (se calhar vai ser necessario usar semaforos)
-		//Alterar os semáforos
-		while(nmrContentores != 0){
-		
-		P(emptyDescarga);
-		P(mutexDescarga);
-		nmrContentores--;
-		out++;
-		printf("O Camiao descarregou %d contentores na zona de carga",out);	
-		sleep(5);
-		//Aumentar o nº de contentores na zona de carga (se calhar vai ser necessario usar semaforos)
-		//Alterar os semáforos
-		V(fullCarga);
-		V(mutexCarga);
-		
-		}
+	//Decrementar o nº de espaços na zona de carga
+	P(emptyCarga);
+	P(mutexCarga);
+	sleep(4);
+	//Aumentar o nº de contentores na zona de carga 
+	V(fullCarga);
+	V(mutexCarga);
 }
