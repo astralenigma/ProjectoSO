@@ -10,6 +10,7 @@ main(){
 	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
 	int n, numeroCaxa, numeroP;
 	mutex = init_sem(1);		/* exclusao mutua */
+	inicializarSemaforos();
 	shmid = shmget(SHMKEY, MAX_CAMIOES, 0777|IPC_CREAT);
 	addr = (char*) shmat(shmid, 0, 0);
 	for (int i = 0; i < MAX_CHILD; ++i) {
