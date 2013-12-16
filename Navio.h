@@ -21,8 +21,8 @@ void atracarNavio(void){
 }
 
 //Metodo que controla as accoes dos navios
-void controloNavio{
-	//alarm(LIFETIME);
+void controloNavio(){
+	alarm(LIFETIME);
 	for(;;){
 		atracarNavio();
 		printf("O navio nº %d atracou.",ship.id);
