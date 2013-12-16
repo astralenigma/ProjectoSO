@@ -21,6 +21,7 @@ void atracarNavio(void){
 	*ship=navio;
 }
 
+//Metodo que controla as accoes dos navios
 void controloNavio{
 	alarm(LIFETIME);
 	for(;;){
