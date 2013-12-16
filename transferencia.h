@@ -9,12 +9,12 @@ void inicializarSemaforos(){
 }
 void descarregarContentorNavio() {
 	int out = 0;
-	while(&ship.contentoresCheios !=0 ) {
+	while(ship.contentoresCheios !=0 ) {
 		//Decrementar o nº de contentores do navio no porto
 		P(emptyDescarga);
 		P(mutexDescarga);
 		out++;
-		&ship.contentoresCheios--;
+		ship.contentoresCheios--;
 		printf("O navio descarregou %d contentores",out);	
 		sleep(5);
 		//Aumentar o nº de contentores na zona de descarga
@@ -27,7 +27,7 @@ void descarregarContentorNavio() {
 void carregarContentorNavio() {
 int in = 0;	
 	
-	while(!(&ship.contentoresVazios>=40&&nmrNaviosAEspera>0)){
+	while(!(ship.contentoresVazios>=40&&nmrNaviosAEspera>0)){
 		//Decrementar o nº de contentores na zona de carga
 		P(fullCarga);
 		P(mutexCarga);
@@ -38,7 +38,7 @@ int in = 0;
 		sleep(7);
 		V(emptyCarga);
 		V(mutexCarga);
-		if(&ship.contentoresVazios == 50){
+		if(ship.contentoresVazios == 50){
 			break;
 		}	
 	}
