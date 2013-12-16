@@ -1,8 +1,7 @@
+Produtos gerarInventario(){};
 
-Produtos gerarInventario();
+void carregarCamiao(){};
 
-void carregarCamiao();
+void descarregarCamiao(){};
 
-void descarregarCamiao();
-
-void mover();
+void mover(){};
