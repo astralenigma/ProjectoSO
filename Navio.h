@@ -18,7 +18,7 @@ void atracarNavio(void){
 	P(semaNaviosAEspera);
 	nmrNaviosAEspera--;
 	Navio navio ={(MAX_SCARGO*0.8+(rand()%(int)(MAX_SCARGO*0.2)+1)), 0};
-	*ship=navio;
+	ship=&navio;
 }
 
 //Metodo que controla as accoes dos navios
