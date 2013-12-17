@@ -11,7 +11,14 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
+//---------Processos e memória
 int child_pid[MAX_CHILD],wait_pid;
+int shmid;// id da memoria partilhada
+	char *addr;
+	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
+	int *ptr;
+	
+//---------Variáveis Diversas
 int i,j;
 double velocidade=6/5;
 
