@@ -7,9 +7,7 @@
 
 
 main(){
-	int shmid;// id da memoria partilhada
-	char *addr;
-	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
+
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
@@ -30,7 +28,7 @@ main(){
 	
 	int x;
 	ptintf("Introduza a opção que deseja efectuar");
-	scanf("%d", &x);
+	scanf("%d", x);
 	switch (x){
 		case 1:
 			simular();
