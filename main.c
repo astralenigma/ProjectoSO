@@ -22,12 +22,12 @@ main(){
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
 	
-	printf("---------------------Menu---------------------");
-	printf("----------Opção 1- Iniciar Simulação----------");
-	printf("----------------------------------------------");
+	printf("---------------------Menu---------------------\n");
+	printf("----------Opção 1- Iniciar Simulação----------\n");
+	printf("----------------------------------------------\n");
 	
 	int x;
-	printf("Introduza a opção que deseja efectuar");
+	printf("Introduza a opção que deseja efectuar\n");
 	scanf("%d", &x);
 	switch (x){
 		case 1:
