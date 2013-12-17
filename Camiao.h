@@ -6,14 +6,17 @@ Produto gerarInventario(){
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  
+  printf("O camião partiu.");
 }
 
 void descarregarCamiao(){
+  printf("O camião chegou.");
   descarregarContentorCamiao();
 }
 
-void mover(){}
+void mover(){
+  printf("O camião está a andar.");
+}
 
 void controloCamiao(){
   for(;;){
