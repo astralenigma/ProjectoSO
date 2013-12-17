@@ -30,7 +30,7 @@ main(){
 	
 	int x;
 	ptintf("Introduza a opção que deseja efectuar");
-	scanf(%d, &x);
+	scanf("%d", &x);
 	switch (x){
 		case 1:
 			simular();
