@@ -27,7 +27,7 @@ main(){
 	printf("----------------------------------------------");
 	
 	int x;
-	ptintf("Introduza a opção que deseja efectuar");
+	printf("Introduza a opção que deseja efectuar");
 	scanf("%d", &x);
 	switch (x){
 		case 1:
