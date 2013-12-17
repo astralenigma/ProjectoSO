@@ -25,11 +25,13 @@ main(){
                
 				if (i == 0) {
 					criarNavio();
+				
 				}
                 		if (i == 1) {
 					controloNavio();
                 		}
-                		if (i <= 2) {
+
+                		if (i >= 2) {
 					controloCamiao();
                 		}
 			break;

@@ -5,7 +5,8 @@ void criarNavio(void){
 	srand(time(NULL));
 	for(;;){
 		int random=(rand()%61);
-		sleep(300+random);
+		//printf("Foi criado um navio com %d");
+		//sleep(300+random);
 		V(semaNaviosAEspera);
 		nmrNaviosAEspera++;
 	}	
@@ -25,9 +26,9 @@ void controloNavio(){
 	alarm(LIFETIME);
 	for(;;){
 		atracarNavio();
-		printf("O navio nº %d atracou.",ship.id);
+		printf("O navio nº %d atracou.\n",ship.id);
 		descarregarContentorNavio();
 		carregarContentorNavio();
-		printf("O navio nº %d partiu.",ship.id);
+		printf("O navio nº %d partiu.\n",ship.id);
 	}
 }
