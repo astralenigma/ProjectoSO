@@ -15,8 +15,9 @@ void descarregarContentorNavio() {
 		P(mutexDescarga);
 		out++;
 		ship.contentoresCheios--;
-		printf("O navio descarregou %d contentores.\n",out);	
+		printf("O navio está a descarregar\n");
 		sleep(5);
+		printf("O navio descarregou %d contentores.\n",out);
 		//Aumentar o nº de contentores na zona de descarga
 		V(fullDescarga);
 		V(mutexDescarga);
@@ -34,8 +35,9 @@ int in = 0;
 		//Incrementar o nº de contentores do navio no porto
 		in++;
 		ship.contentoresVazios++;
-		printf("Foi inserido %d contentores no navio.\n", in);
+		printf("O navio está a carregar.\n");
 		sleep(7);
+		printf("O navio carregou %d contentores.\n",in);
 		V(emptyCarga);
 		V(mutexCarga);
 		if(ship.contentoresVazios == 50){
@@ -48,8 +50,9 @@ void carregarContentorCamiao() {
 	//Diminuir o nº de contentores na zona de carga 
 	P(fullDescarga);
 	P(mutexDescarga);
-	sleep(5);
 	//Incrementar o nº de espaços na zona de carga
+	printf("Um camião está a carregar um contentor");
+	sleep(5);
 	printf("Um camião foi carregado com um contentor.");
 	V(emptyDescarga);
 	V(mutexDescarga);
@@ -59,6 +62,7 @@ void descarregarContentorCamiao() {
 	//Decrementar o nº de espaços na zona de carga
 	P(emptyCarga);
 	P(mutexCarga);
+	printf("Um camião está a descarregar um contentor");
 	sleep(4);
 	//Aumentar o nº de contentores na zona de carga 
 	printf("Um Camião descarregou um contentor.");
