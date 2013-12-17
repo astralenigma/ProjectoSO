@@ -8,6 +8,8 @@
 #define TUNLOADINGTIME	4	/* max. time for unloading cargo from the trucks	*/
 #define TLOADINGTIME	5	/* max. time for unloading cargo from the trucks	*/
 #define MAX_CHILD MAX_CAMIOES + 2
+#define min(a, b) ((a) < (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
 int child_pid[MAX_CHILD],wait_pid;
 int i,j;
