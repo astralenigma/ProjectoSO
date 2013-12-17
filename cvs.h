@@ -45,5 +45,5 @@ semaphore semaNaviosAEspera;
 semaphore mutex;
 
 Navio ship;
-int nmrNaviosAEspera=0;
+int nmrNaviosAEspera=1;
 int nmrNaviosCriados;
