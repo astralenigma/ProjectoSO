@@ -11,6 +11,7 @@
 #define SHMKEY (key_t)0x10
 int child_pid[MAX_CHILD],wait_pid;
 int i,j;
+double velocidade=6/5;
 
 typedef enum {
 frescos=0,alimentar=1,npereciveis=2
