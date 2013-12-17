@@ -50,6 +50,7 @@ void carregarContentorCamiao() {
 	P(mutexDescarga);
 	//sleep(5);
 	//Incrementar o nº de espaços na zona de carga
+	printf("Um camião foi carregado com um contentor.");
 	V(emptyDescarga);
 	V(mutexDescarga);
 }
@@ -60,6 +61,7 @@ void descarregarContentorCamiao() {
 	P(mutexCarga);
 	//sleep(4);
 	//Aumentar o nº de contentores na zona de carga 
+	printf("Um Camião descarregou um contentor.");
 	V(fullCarga);
 	V(mutexCarga);
 }
