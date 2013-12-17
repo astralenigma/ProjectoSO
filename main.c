@@ -29,7 +29,8 @@ main(){
 	printf("----------------------------------------------");
 	
 	int x;
-	scanf("Introduza a opção que deseja efectuar", %x);
+	ptintf("Introduza a opção que deseja efectuar");
+	scanf(%d, &x);
 	switch (x){
 		case 1:
 			simular();
