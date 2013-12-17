@@ -6,16 +6,16 @@ Produto gerarInventario(){
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  printf("O camião partiu.");
+  printf("O camião partiu.\n");
 }
 
 void descarregarCamiao(){
-  printf("O camião chegou.");
+  printf("O camião chegou.\n");
   descarregarContentorCamiao();
 }
 
 void mover(){
-  printf("O camião está a andar.");
+  printf("O camião está a andar.\n");
 }
 
 void controloCamiao(){
