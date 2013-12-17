@@ -3,6 +3,8 @@
 #include "transferencia.h"
 #include "Camiao.h"
 #include "Navio.h"
+#include "Simular.h"
+
 
 main(){
 	int shmid;// id da memoria partilhada
@@ -21,45 +23,20 @@ main(){
     	apNmrNaviosAEspera=(int*)ptr++;
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
-    	for (i = 0; i < MAX_CHILD; i++) {
-		// printf("%d\n", i);
-		child_pid[i] = fork();
-		switch (child_pid[i]) {
-			case -1: /* error: no process created*/
-				perror("fork failed");
-				exit(1);
-                	break;
-			case 0: /*child process*/
-				if (i == 0) {
-					criarNavio();
-				}
-                		if (i == 1) {
-					controloNavio();
-                		}
-                		if (i >= 2) {
-					controloCamiao();
-                		}
+	
+	printf("---------------------Menu---------------------");
+	printf("----------Opção 1- Iniciar Simulação----------");
+	printf("----------------------------------------------");
+	
+	int x;
+	scanf("Introduza a opção que deseja efectuar", %x);
+	switch (x){
+		case 1:
+			simular();
 			break;
-			default: /*parent process*/
-				if (i == (MAX_CHILD - 1)) /* all childs created ?*/ { /* yes -> wait for termination	*/
-                    			for ( j = 0; j < MAX_CHILD; j++) {
-                        			wait_pid = wait(&child_stat);
-						if (wait_pid == -1) {
-	                            			perror("wait failed");
-						};
-                    			};
-					printf("All child processes have terminated.\n");
-					//rel_sem(mutex);
-					rel_sem(mutexDescarga);
-					rel_sem(fullDescarga);
-					rel_sem(emptyDescarga);
-					rel_sem(mutexCarga);
-					rel_sem(fullCarga);
-					rel_sem(emptyCarga);
-					shmdt(addr);
-					shmctl(shmid, IPC_RMID, 0);
-                		};
-			break;
-		}; /*end switch*/
-	}; /*end for*/
+		default : 
+			printf("O numero que introduziu esta incorrecto.");
+			
+	};
+		
 }
