@@ -13,6 +13,11 @@ main(){
 	inicializarSemaforos();
 	shmid = shmget(SHMKEY, MAX_CAMIOES, 0777|IPC_CREAT);
 	addr = (char*) shmat(shmid, 0, 0);
+    //pointerNavio = (struct Navio *) shmat(shmid, NULL, 0);
+    //pointerZDescarga = (struct ZonaDescarga *) shmat(shmid, NULL, 0);
+    //pointerPorto = (struct Navio *) shmat(shmid, NULL, 0);
+    //*addr = (char*) shmat(shmid, 0, 0);
+    //ptr_porto = (int*) addr;
 	for (i = 0; i < MAX_CHILD; i++) {
 		// printf("%d\n", i);
 		child_pid[i] = fork();
