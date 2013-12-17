@@ -8,17 +8,19 @@ main(){
 	int shmid;// id da memoria partilhada
 	char *addr;
 	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
-	int n, numeroCaxa, numeroP;
-	mutex = init_sem(1);		/* exclusao mutua */
+	//int n, numeroCaxa, numeroP;
+	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
-	shmid = shmget(SHMKEY, MAX_CAMIOES, 0777|IPC_CREAT);
+	shmid = shmget(SHMKEY, 128, 0777|IPC_CREAT);
 	addr = (char*) shmat(shmid, 0, 0);
-    //pointerNavio = (struct Navio *) shmat(shmid, NULL, 0);
-    //pointerZDescarga = (struct ZonaDescarga *) shmat(shmid, NULL, 0);
-    //pointerPorto = (struct Navio *) shmat(shmid, NULL, 0);
-    //*addr = (char*) shmat(shmid, 0, 0);
-    //ptr_porto = (int*) addr;
-	for (i = 0; i < MAX_CHILD; i++) {
+	//pointerNavio = (struct Navio *) addr;
+	//pointerZDescarga = (struct ZonaDescarga *) addr;
+	//pointerPorto = (struct Navio *) addr;
+    	ptr = (int*) addr;
+    	apNmrNaviosAEspera=(int*)ptr++;
+    	//indeciso sobre o que usar
+    	//apNmrNaviosAEspera=(int*)ptr++; 
+    	for (i = 0; i < MAX_CHILD; i++) {
 		// printf("%d\n", i);
 		child_pid[i] = fork();
 		switch (child_pid[i]) {
@@ -27,15 +29,12 @@ main(){
 				exit(1);
                 	break;
 			case 0: /*child process*/
-               
 				if (i == 0) {
 					criarNavio();
-				
 				}
                 		if (i == 1) {
 					controloNavio();
                 		}
-
                 		if (i >= 2) {
 					controloCamiao();
                 		}
@@ -49,7 +48,7 @@ main(){
 						};
                     			};
 					printf("All child processes have terminated.\n");
-					rel_sem(mutex);
+					//rel_sem(mutex);
 					rel_sem(mutexDescarga);
 					rel_sem(fullDescarga);
 					rel_sem(emptyDescarga);
