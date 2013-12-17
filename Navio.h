@@ -1,5 +1,5 @@
 //Metodo que devolve um navio usar para criar o navio.
-void criarNavio(void){
+void criarNavio(){
 	alarm(LIFETIME);
 	nmrNaviosCriados=0;
 	srand(time(NULL));
@@ -13,7 +13,7 @@ void criarNavio(void){
 }
 
 //Metodo para colocar o navio activo
-void atracarNavio(void){
+void atracarNavio(){
 	srand(time(NULL));
 	P(semaNaviosAEspera);
 	nmrNaviosAEspera--;
