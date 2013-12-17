@@ -16,6 +16,7 @@ main(){
 	//pointerNavio = (struct Navio *) addr;
 	//pointerZDescarga = (struct ZonaDescarga *) addr;
 	//pointerPorto = (struct Navio *) addr;
+    	int *ptr;
     	ptr = (int*) addr;
     	apNmrNaviosAEspera=(int*)ptr++;
     	//indeciso sobre o que usar
