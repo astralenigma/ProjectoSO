@@ -16,7 +16,7 @@ void atracarNavio(){
 	srand(time(NULL));
 	P(semaNaviosAEspera);
 	*apNmrNaviosAEspera--;
-	Navio navio ={++nmrNaviosCriados,(maxSCargoO*0.8+(rand()%(int)(maxSCargo*0.2)+1)), 0};
+	Navio navio ={++nmrNaviosCriados,(maxSCargo*0.8+(rand()%(int)(maxSCargo*0.2)+1)), 0};
 	ship=navio;
 }
 
