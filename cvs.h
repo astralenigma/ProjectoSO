@@ -45,11 +45,11 @@ typedef struct {
 }Navio;
 
 typedef struct node{
-  node *no1;
+  struct node *no1;
   int distanciaNo1;
-  node *no2;
+  struct node *no2;
   int distanciaNo2;
-  node *no3;
+  struct node *no3;
   int distanciaNo3;
 }No;
 //------Semáforos
