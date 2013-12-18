@@ -13,7 +13,7 @@ int maxSCargo;        /* max. cargo of the ship        */
 int maxUZCargo;        /* max. cargo of the unloading zone        */
 int maxLZCargo;        /* max. cargo of the loading zone        */
 //---------Processos e memória
-int child_pid[1],wait_pid;
+int wait_pid;
 int shmid;// id da memoria partilhada
 char *addr;
 int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
