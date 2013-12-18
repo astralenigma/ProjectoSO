@@ -13,7 +13,7 @@ main(){
 	maxUZCargo = 30;
 	maxLZCargo = 20;
 	int array[maxChilds];
-	child_pid=array;
+	&child_pid=&array;
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
