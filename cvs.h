@@ -13,14 +13,14 @@ int shmid;// id da memoria partilhada
 	int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
 	int *ptr;
 //-------Variáveis alteradas pelo utilizador
-int maxCamioes	10;       /* max. # of truck processes	*/
+int maxCamioes = 10;       /* max. # of truck processes	*/
 int maxChilds= maxCamioes + 2;	/* max. # of child processes	*/
 int maxSCargo = 50	/* max. cargo of the ship	*/
 int max_UZCargo = 30	/* max. cargo of the unloading zone	*/
 int max_LZCargo = 20	/* max. cargo of the loading zone	*/
 //---------Variáveis Diversas
 int i,j;
-double velocidade=6/5;
+double velocidade=5/6;
 
 typedef enum {
 frescos,alimentar,npereciveis
@@ -43,10 +43,7 @@ typedef struct {
   int contentoresVazios;
 }Navio;
 
-int max_SCargo = 50;	/* max. cargo of the ship	*/
-int max_UZCargo = 30;	/* max. cargo of the unloading zone	*/
-int max_LZCargo = 20;	/* max. cargo of the loading zone	*/
-
+//------Semáforos
 semaphore mutexDescarga;
 semaphore fullDescarga;
 semaphore emptyDescarga;
@@ -57,7 +54,7 @@ semaphore emptyCarga;
  
 semaphore semaNaviosAEspera;
 semaphore mutex;
-
+//------Memória partilhada
 Navio ship;
 //semaphore *apMutexDescarga;
 //semaphore *apFullDescarga;
