@@ -1,13 +1,12 @@
 #include "sema.h"
 #include "cvs.h"
-#include "transferencia.h"
+#include "Transferencia.h"
 #include "Camiao.h"
 #include "Navio.h"
 #include "Simular.h"
 
 
 main(){
-
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
