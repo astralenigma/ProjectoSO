@@ -13,7 +13,7 @@ int maxSCargo;        /* max. cargo of the ship        */
 int maxUZCargo;        /* max. cargo of the unloading zone        */
 int maxLZCargo;        /* max. cargo of the loading zone        */
 //---------Processos e memória
-int child_pid[],wait_pid;
+int child_pid[1],wait_pid;
 int shmid;// id da memoria partilhada
 char *addr;
 int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
@@ -44,12 +44,12 @@ typedef struct {
   int contentoresVazios;
 }Navio;
 
-typedef struct {
-  No *no1;
+typedef struct node{
+  node *no1;
   int distanciaNo1;
-  No *no2;
+  node *no2;
   int distanciaNo2;
-  No *no3;
+  node *no3;
   int distanciaNo3;
 }No;
 //------Semáforos
