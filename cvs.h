@@ -6,18 +6,19 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
-//---------Processos e memória
-int child_pid[MAX_CHILD],wait_pid;
-int shmid;// id da memoria partilhada
-	char *addr;
-	int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
-	int *ptr;
 //-------Variáveis alteradas pelo utilizador
 int maxCamioes = 10;       /* max. # of truck processes	*/
 int maxChilds= maxCamioes + 2;	/* max. # of child processes	*/
-int maxSCargo = 50	/* max. cargo of the ship	*/
-int max_UZCargo = 30	/* max. cargo of the unloading zone	*/
-int max_LZCargo = 20	/* max. cargo of the loading zone	*/
+int maxSCargo = 50;	/* max. cargo of the ship	*/
+int maxUZCargo = 30;	/* max. cargo of the unloading zone	*/
+int maxLZCargo = 20;	/* max. cargo of the loading zone	*/
+//---------Processos e memória
+int child_pid[maxChilds],wait_pid;
+int shmid;// id da memoria partilhada
+char *addr;
+int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
+int *ptr;
+
 //---------Variáveis Diversas
 int i,j;
 double velocidade=5/6;
