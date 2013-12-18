@@ -7,11 +7,11 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
 //-------Variáveis alteradas pelo utilizador
-int maxCamioes = 10;       /* max. # of truck processes	*/
-int maxChilds= maxCamioes + 2;	/* max. # of child processes	*/
-int maxSCargo = 50;	/* max. cargo of the ship	*/
-int maxUZCargo = 30;	/* max. cargo of the unloading zone	*/
-int maxLZCargo = 20;	/* max. cargo of the loading zone	*/
+int maxCamioes;       /* max. # of truck processes        */
+int maxChilds;        /* max. # of child processes        */
+int maxSCargo;        /* max. cargo of the ship        */
+int maxUZCargo;        /* max. cargo of the unloading zone        */
+int maxLZCargo;        /* max. cargo of the loading zone        */
 //---------Processos e memória
 int child_pid[maxChilds],wait_pid;
 int shmid;// id da memoria partilhada
