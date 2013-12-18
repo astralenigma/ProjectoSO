@@ -1,13 +1,8 @@
-#define MAX_CAMIOES	10       /* max. # of child processes	*/
 #define LIFETIME	1440	/* max. lifetime of a process	*/
 #define SLOADINGTIME	7	/* max. time for loading cargo to the ship	*/
 #define SUNLOADINGTIME 	5	/* max. time for unloading cargo from the ship	*/
-#define MAX_SCARGO	50	/* max. cargo of the ship	*/
-#define MAX_UZCARGO	30	/* max. cargo of the unloading zone	*/
-#define MAX_LZCARGO	20	/* max. cargo of the loading zone	*/
 #define TUNLOADINGTIME	4	/* max. time for unloading cargo from the trucks	*/
 #define TLOADINGTIME	5	/* max. time for unloading cargo from the trucks	*/
-#define MAX_CHILD MAX_CAMIOES + 2
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
@@ -15,15 +10,20 @@
 int child_pid[MAX_CHILD],wait_pid;
 int shmid;// id da memoria partilhada
 	char *addr;
-	int valorPid[MAX_CAMIOES], aguardaPid, aguardacliente, estadoCliente, child_stat;
+	int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
 	int *ptr;
-	
+//-------Variáveis alteradas pelo utilizador
+int maxCamioes	10;       /* max. # of truck processes	*/
+int maxChilds= maxCamioes + 2;	/* max. # of child processes	*/
+int maxSCargo = 50	/* max. cargo of the ship	*/
+int max_UZCargo = 30	/* max. cargo of the unloading zone	*/
+int max_LZCargo = 20	/* max. cargo of the loading zone	*/
 //---------Variáveis Diversas
 int i,j;
 double velocidade=6/5;
 
 typedef enum {
-frescos=0,alimentar=1,npereciveis=2
+frescos,alimentar,npereciveis
 }TipoDeProduto;
 
 typedef struct {
@@ -43,6 +43,9 @@ typedef struct {
   int contentoresVazios;
 }Navio;
 
+int max_SCargo = 50;	/* max. cargo of the ship	*/
+int max_UZCargo = 30;	/* max. cargo of the unloading zone	*/
+int max_LZCargo = 20;	/* max. cargo of the loading zone	*/
 
 semaphore mutexDescarga;
 semaphore fullDescarga;
