@@ -9,10 +9,13 @@
 main(){
 	printf("Insira o número maximo de camiões da empresa\n");
 	scanf("%d", &maxCamioes);
-	printf("Insira a dimensão da Zona de Carga \n");
+	printf("Numero de camioes disponiveis da empresa %d.\n", maxCamioes);
+	printf("Insira a dimensão da Zona de Carga\n");
 	scanf("%d", &maxLZCargo);
+	printf("Dimensão da zona de Carga %d.\n", maxLZCargo);
 	printf("Insira a dimensão da Zona de Descarga\n");
 	scanf("%d", &maxUZCargo);
+	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
 	//maxCamioes=10;
 	maxChilds = maxCamioes + 2;
 	maxSCargo = 50;
