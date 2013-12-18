@@ -7,11 +7,17 @@
 
 
 main(){
-	maxCamioes=10;
+	printf("Insira o número maximo de camiões da empresa\n");
+	scanf("%d", &maxCamioes);
+	printf("Insira a dimensão da Zona de Carga \n");
+	scanf("%d", &maxLZCargo);
+	printf("Insira a dimensão da Zona de Descarga\n");
+	scanf("%d", &maxUZCargo);
+	//maxCamioes=10;
 	maxChilds = maxCamioes + 2;
 	maxSCargo = 50;
-	maxUZCargo = 30;
-	maxLZCargo = 20;
+	//maxUZCargo = 30;
+	//maxLZCargo = 20;
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
