@@ -9,7 +9,8 @@ void inicializarSemaforos(){
 }
 
 simular(){
-  for (i = 0; i < maxChilds; i++) {
+	int child_pid[maxChilds];
+	for (i = 0; i < maxChilds; i++) {
                 // printf("%d\n", i);
                 child_pid[i] = fork();
                 switch (child_pid[i]) {
