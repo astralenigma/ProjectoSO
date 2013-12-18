@@ -43,6 +43,14 @@ typedef struct {
   int contentoresVazios;
 }Navio;
 
+typedef struct {
+  No no1;
+  int distanciaNo1;
+  No no2;
+  int distanciaNo2;
+  No no3;
+  int distanciaNo3;
+}No;
 //------Semáforos
 semaphore mutexDescarga;
 semaphore fullDescarga;
