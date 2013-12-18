@@ -7,6 +7,11 @@
 
 
 main(){
+	maxCamioes=10;
+	maxChilds = maxCamioes + 2;
+	maxSCargo = 50;
+	maxUZCargo = 30;
+	maxLZCargo = 20;
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
