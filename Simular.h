@@ -9,7 +9,7 @@ void inicializarSemaforos(){
 }
 
 simular(){
-  for (i = 0; i < MAX_CHILD; i++) {
+  for (i = 0; i < maxChilds; i++) {
                 // printf("%d\n", i);
                 child_pid[i] = fork();
                 switch (child_pid[i]) {
@@ -29,8 +29,8 @@ simular(){
                                 }
                         break;
                         default: /*parent process*/
-                                if (i == (MAX_CHILD - 1)) /* all childs created ?*/ { /* yes -> wait for termination        */
-                                            for ( j = 0; j < MAX_CHILD; j++) {
+                                if (i == (maxChilds - 1)) /* all childs created ?*/ { /* yes -> wait for termination        */
+                                            for ( j = 0; j < maxChilds; j++) {
                                                 wait_pid = wait(&child_stat);
                                                 if (wait_pid == -1) {
                                                             perror("wait failed");
