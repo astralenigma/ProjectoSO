@@ -1,14 +1,13 @@
 //Metodo que devolve um navio usar para criar o navio.
 void criarNavio(){
 	alarm(LIFETIME);
-	nmrNaviosCriados=0;
 	srand(time(NULL));
 	for(;;){
-		int random=(rand()%61);
-		printf("Foi criado um navio");
+		int random=(300+rand()%61);
 		sleep(random);
 		V(semaNaviosAEspera);
 		*apNmrNaviosAEspera++;
+		printf("Foi criado um navio");
 	}	
 }
 
