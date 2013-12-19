@@ -63,6 +63,7 @@ void descarregarCamiao(){
 void mover(int destino){
     printf("O condutor do camião está a planear a rota\n");
     int tempoAPercorrer=(int)(destino/velocidade);
+    printf("O tempo a pecorrer é %d.\n", tempoAPercorrer);
     printf("O camião está a andar.\n");
     sleep(tempoAPercorrer);
     printf("O camião chegou ao destino.\n");
