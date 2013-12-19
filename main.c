@@ -24,8 +24,8 @@ main(){
     	int *ptr;
     	ptr = (int*) addr;
     	apNmrNaviosAEspera=(int*)ptr++;
-    	barcosAtendidos=(int*)ptr++;
-    	*barcosAtendidos=0;
+    	barcosAtracados=(int*)ptr++;
+    	*barcosAtracados=0;
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
 	for( ; ;){	
