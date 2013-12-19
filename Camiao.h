@@ -3,8 +3,8 @@ Produto produto;
 Produto gerarInventario(){
   srand(time(NULL));
   switch(rand()%3){
-    case 0: return { frescos,1, rand()%10};
-    case 1: return { alimentar,rand()%365, rand()%10}
+    case 0: return { frescos, 1, rand()%10};
+    case 1: return { alimentar,rand()%365, rand()%10};
     case 2: return { npereciveis,0, rand()%10};
   }
   
