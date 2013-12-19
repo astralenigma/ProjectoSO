@@ -62,18 +62,18 @@ void descarregarCamiao(){
 
 void mover(int destino){
     printf("O condutor do camião está a planear a rota\n");
-    int tempoAPercorrer=(int)(destino/velocidade);
-    printf("O tempo a pecorrer é %d.\n", tempoAPercorrer);
+    printf("A velocidade do camião é %d",velocidade);
+    printf("O tempo a pecorrer é %d.\n", ((int)(destino/velocidade)));
     printf("O camião está a andar.\n");
-    sleep(tempoAPercorrer);
+    sleep(((int)(destino/velocidade)));
     printf("O camião chegou ao destino.\n");
 }
 
 void controloCamiao(){
   for(;;){
     carregarCamiao();
-    mover(*percursos[(produto.destino-1)][0]);
-    mover(*percursos[(produto.destino-1)][1]);
+    mover(percursos[(produto.destino-1)][0]);
+    mover(percursos[(produto.destino-1)][1]);
     descarregarCamiao();
   }
 }
