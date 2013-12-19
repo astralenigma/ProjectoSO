@@ -71,8 +71,8 @@ void mover(int destino){
 void controloCamiao(){
   for(;;){
     carregarCamiao();
-    mover(percursos[produto.destino-1][0]);
-    mover(percursos[produto.destino-1][1]);
+    mover(percursos[(produto.destino-1)][0]);
+    mover(percursos[(produto.destino-1)][1]);
     descarregarCamiao();
   }
 }
