@@ -80,4 +80,5 @@ void controloCamiao(){
 
 void entregarProduto(){
   printf("O produto foi entregue na loja %d",produto.destino);
+  //somar variàvel na memória relacionado aos produtos entregados.
 }
