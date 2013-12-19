@@ -38,6 +38,12 @@ main(){
 		case 1:
 			simular();
 			break;
+		case 2: 
+			alterarNumeroCamioesEmpresa();
+			alterarDimensaoZC();
+			alteraDimensaoZD();
+			simular();
+			break;
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
 			
