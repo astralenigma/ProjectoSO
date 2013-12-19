@@ -26,6 +26,7 @@ simular(){
                                         controloNavio();
                                 }
                                 if (i >= 2) {
+                                	nmrCamiao=i-2;
                                         controloCamiao();
                                 }
                         break;
