@@ -39,10 +39,21 @@ main(){
 			simular();
 			break;
 		case 2: 
-			alterarNumeroCamioesEmpresa();
-			alterarDimensaoZC();
-			alterarDimensaoZD();
-			simular();
+		printf("---------------------------Menu------------------------------------\n"
+			"----------Opção 1- Alterar Número de Camiões-----------------------\n"
+			"----------Opção 2- Alterar Dimensão da Zona de Carga---------------\n"
+			"----------Opção 3- Alterar Dimensão da Zona de Descarga------------\n"
+			"----------Opção 4- Sair--------------------------------------------\n");
+			printf("Introduza a opção que deseja efectuar\n");
+			int y;
+			scanf("%d", &y);
+			switch(y){
+			case 1:alterarNumeroCamioesEmpresa();
+			break;
+			case 2:alterarDimensaoZC();
+			break;
+			case 3:alterarDimensaoZD();
+			}
 			break;
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
