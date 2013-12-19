@@ -6,7 +6,7 @@ void criarNavio(){
 		int random=(300+rand()%61);
 		sleep(random);
 		V(semaNaviosAEspera);
-		*apNmrNaviosAEspera++;
+		(*apNmrNaviosAEspera)++;
 		printf("Foi criado um navio");
 	}	
 }
@@ -15,7 +15,7 @@ void criarNavio(){
 void atracarNavio(){
 	srand(time(NULL));
 	P(semaNaviosAEspera);
-	*apNmrNaviosAEspera--;
+	(*apNmrNaviosAEspera)--;
 	Navio navio ={++*barcosAtracados,(maxSCargo*0.8+(rand()%(int)(maxSCargo*0.2)+1)), 0};
 	ship=navio;
 }
