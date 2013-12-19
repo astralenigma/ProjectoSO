@@ -4,10 +4,7 @@
 #include "Camiao.h"
 #include "Navio.h"
 #include "Simular.h"
-
-
 main(){
-	
 	maxCamioes=10;
 	maxChilds = maxCamioes + 2;
 	maxSCargo = 50;
@@ -25,6 +22,7 @@ main(){
     	ptr = (int*) addr;
     	apNmrNaviosAEspera=(int*)ptr++;
     	barcosAtracados=(int*)ptr++;
+    	nmrCamioes=(int*)ptr++;
     	*barcosAtracados=0;
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
