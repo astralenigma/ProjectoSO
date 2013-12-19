@@ -14,6 +14,7 @@ No percursos[]={
     11, &percursos[7], 2, &percursos[10], 6, NULL, 0,
     12, &percursos[11], 5, NULL, 0, NULL, 0
   };
+No *posicaoActual=&percursos[0];
 Produto gerarInventario(){
   srand(time(NULL));
   int randomL=(rand()%10)+1;
@@ -43,12 +44,12 @@ Produto gerarInventario(){
   }
   return temp;
 }
-int calcularDistancia(int origem,int destino,int distanciaPercorrida){
+int calcularDistancia(No *origem,No *destino,int distanciaPercorrida){
   if(origem==destino){
     return 0;
   }
-  
-  return 12;
+  distanciaPercorrida+=1377;
+  return min(calcularDistancia( *origem, *destino,distanciaPercorrida));
 }
 
 void carregarCamiao(){
@@ -63,8 +64,10 @@ void descarregarCamiao(){
 }
 
 void mover(){
-  printf("O camião está a andar.\n");
-  sleep(0);
+    printf("O condutor do camião está a planear a rota");
+    int tempoAPercorrer=calcularDistancia(posicaoActual,&percursos[produto.destino],0);
+    printf("O camião está a andar.\n");
+    sleep(0);
 }
 
 void controloCamiao(){
