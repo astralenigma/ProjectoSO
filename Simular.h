@@ -37,7 +37,14 @@ simular(){
                                                             perror("wait failed");
                                                 }
                                             }
-                                        printf("All child processes have terminated.\n");
+                                        printf("Atracaram %d Navios.\n"
+                                        +"Ficaram %d Navios por atender.\n"
+                                        +"Ficaram %d Contentores na Zona de Carga\n"
+                                        +"Ficaram %d Contentores na Zona de Descarga\n",
+                                        barcosAtracados,
+                                        apNmrNaviosAEspera,
+                                        contentoresNaZC,
+                                        contentoresNaZD);
                                         //rel_sem(mutex);
                                         rel_sem(mutexDescarga);
                                         rel_sem(fullDescarga);
