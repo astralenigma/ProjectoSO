@@ -10,14 +10,14 @@ Produto gerarInventario(){
     case 7: 
     case 8: 
     case 9: if((rand()%2)==0){
-              return (struct { TipoDeProduto frescos, 1, randomL});
+              return (Produto)({TipoDeProduto frescos, 1, randomL});
             }else{
-              return (struct { TipoDeProduto alimentar,(rand()%365), randomL});
+              return (Produto) ({TipoDeProduto alimentar,(rand()%365), randomL});
             }
     case 2: 
     case 4:
     case 6:
-    case 10: return (struct { TipoDeProduto npereciveis,0, randomL});
+    case 10: return (Produto) ({TipoDeProduto npereciveis,0, randomL});
   }
   
 }
