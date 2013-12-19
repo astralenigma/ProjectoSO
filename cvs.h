@@ -45,6 +45,7 @@ typedef struct {
 }Navio;
 
 typedef struct node{
+  int id;
   struct node *no1;
   int distanciaNo1;
   struct node *no2;
