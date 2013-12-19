@@ -3,6 +3,7 @@ Produto produto;
 Produto gerarInventario(){
   srand(time(NULL));
   int randomL=(rand()%10)+1;
+  Produto temp;
   switch(randomL){
     case 1: 
     case 3: 
@@ -10,16 +11,23 @@ Produto gerarInventario(){
     case 7: 
     case 8: 
     case 9: if((rand()%2)==0){
-              return (Produto)({TipoDeProduto frescos, 1, randomL});
+             temp.tp=frescos;
+             temp.datavalidade=1;
+             temp.destino=randomL;
             }else{
-              return (Produto) ({TipoDeProduto alimentar,(rand()%365), randomL});
+             temp.tp=alimentar;
+             temp.datavalidade=(rand()%365);
+             temp.destino=randomL;
             }
+            break;
     case 2: 
     case 4:
     case 6:
-    case 10: return (Produto) ({TipoDeProduto npereciveis,0, randomL});
+    case 10: temp.tp=npereciveis;
+             temp.datavalidade=0;
+             temp.destino=randomL;
   }
-  
+  return temp;
 }
 
 void carregarCamiao(){
