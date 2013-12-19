@@ -7,20 +7,12 @@
 
 
 main(){
-	printf("Insira o número maximo de camiões da empresa\n");
-	scanf("%d", &maxCamioes);
-	printf("Numero de camioes disponiveis da empresa %d.\n", maxCamioes);
-	printf("Insira a dimensão da Zona de Carga\n");
-	scanf("%d", &maxLZCargo);
-	printf("Dimensão da zona de Carga %d.\n", maxLZCargo);
-	printf("Insira a dimensão da Zona de Descarga\n");
-	scanf("%d", &maxUZCargo);
-	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
-	//maxCamioes=10;
+	
+	maxCamioes=10;
 	maxChilds = maxCamioes + 2;
 	maxSCargo = 50;
-	//maxUZCargo = 30;
-	//maxLZCargo = 20;
+	maxUZCargo = 30;
+	maxLZCargo = 20;
 	//int n, numeroCaxa, numeroP;
 	//mutex = init_sem(1);		/* exclusao mutua */
 	inicializarSemaforos();
@@ -34,10 +26,10 @@ main(){
     	apNmrNaviosAEspera=(int*)ptr++;
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
-	
+	for( ; ;){	
 	printf("---------------------Menu---------------------\n");
 	printf("----------Opção 1- Iniciar Simulação----------\n");
-	printf("----------------------------------------------\n");
+	printf("----------Opção 2- Alterar Valores------------\n");
 	
 	int x;
 	printf("Introduza a opção que deseja efectuar\n");
@@ -49,6 +41,8 @@ main(){
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
 			
-	};
-		
+		};
+	
+       }
+	
 }
