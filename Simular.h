@@ -51,25 +51,25 @@ simular(){
                         break;
                 } /*end switch*/
         }
-        
-    alterarNumeroCamioesEmpresa(){
-     	printf("Insira o número maximo de camiões da empresa\n");
+}       
+alterarNumeroCamioesEmpresa(){
+	printf("Insira o número maximo de camiões da empresa\n");
 	scanf("%d", &maxCamioes);
 	printf("Numero de camioes disponiveis da empresa %d.\n", maxCamioes);
 	
-   }   
+}   
      
-     alterarDimensaoZC(){
+alterarDimensaoZC(){
      	printf("Insira a dimensão da Zona de Carga\n");
 	scanf("%d", &maxLZCargo);
 	printf("Dimensão da zona de Carga %d.\n", maxLZCargo);
 	
-     }
+}
      
-     alterarDimensaoZD(){
+alterarDimensaoZD(){
 	printf("Insira a dimensão da Zona de Descarga\n");
 	scanf("%d", &maxUZCargo);
 	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
      	
-     }
 }
+
