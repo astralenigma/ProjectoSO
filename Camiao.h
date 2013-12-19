@@ -1,5 +1,5 @@
 Produto produto;
-No percursos[]{
+No percursos[]={
     0, &percursos[1], 6, NULL, 0, NULL, 0,
     1, &percursos[2], 7, percursos[9], 5, NULL, 0,
     2, &percursos[1], 7, &percursos[3], 4, &percursos[4], 5,
@@ -77,5 +77,4 @@ void controloCamiao(){
 
 void entregarProduto(){
   printf("O produto foi entregue na loja %d",produto.destino);
-  produto=NULL;
 }
