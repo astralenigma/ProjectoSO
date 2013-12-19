@@ -1,3 +1,4 @@
+
 Produto produto;
 int percursos[10][2]={
     { 6,15},
@@ -49,24 +50,23 @@ Produto gerarInventario(){
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  printf("O camião foi carregado com o contentor.\n");
+  printf("O camião nº %d foi carregado com o contentor.\n", nmrCamiao);
   produto=gerarInventario();
-  printf("O camião tem um produto %s para a loja %d\n",produtosTipo[produto.tp],produto.destino);
-  printf("O camião partiu.\n");
+  printf("O camião nº %d tem um produto %s para a loja %d\n", nmrCamiao,produtosTipo[produto.tp],produto.destino);
+  printf("O camião nº %d partiu.\n", nmrCamiao);
 }
 
 void descarregarCamiao(){
-  printf("O camião chegou.\n");
+  printf("O camião  nº %d chegou.\n",nmrCamiao);
   descarregarContentorCamiao();
 }
 
 void mover(int destino){
-    printf("O condutor do camião está a planear a rota\n");
-    printf("A velocidade do camião é %f",(velocidade));
-    printf("O tempo a pecorrer é %d.\n", ((int)(destino/velocidade)));
-    printf("O camião está a andar.\n");
+    printf("O condutor do camião nº %d está a planear a rota\n",nmrCamiao);
+    //printf("O tempo a pecorrer é %d.\n", ((int)(destino/velocidade)));
+    printf("O camião nº %d está a andar.\n",nmrCamiao);
     sleep(((int)(destino/velocidade)));
-    printf("O camião chegou ao destino.\n");
+    printf("O camião  nº %d chegou ao destino.\n",nmrCamiao);
 }
 
 void controloCamiao(){
@@ -79,6 +79,6 @@ void controloCamiao(){
 }
 
 void entregarProduto(){
-  printf("O produto foi entregue na loja %d",produto.destino);
+  printf("O camião  nº %d entregou o produto na loja %d",nmrCamiao,produto.destino);
   //somar variàvel na memória relacionado aos produtos entregados.
 }
