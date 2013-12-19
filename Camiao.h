@@ -13,7 +13,7 @@ int percursos[10][2]={
   };
 char *produtosTipo[]={
   "Frescos",
-  "Produtos com validade",
+  "Com validade",
   "Não Perecíveis"
 };
 int posicao;
