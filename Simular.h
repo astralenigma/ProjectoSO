@@ -80,3 +80,7 @@ alterarDimensaoZD(){
      	
 }
 
+estatisticas(){
+ printf("HELLLLOOOOO");
+}
+
