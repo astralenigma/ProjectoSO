@@ -32,6 +32,7 @@ main(){
 	printf("---------------------Menu---------------------\n");
 	printf("----------Opção 1- Iniciar Simulação----------\n");
 	printf("----------Opção 2- Alterar Valores------------\n");
+	printf("----------Opção 3- Estatisticas---------------\n");
 	
 	int x;
 	printf("Introduza a opção que deseja efectuar\n");
@@ -56,6 +57,9 @@ main(){
 			break;
 			case 3:alterarDimensaoZD();
 			}
+			break;
+		case 3:
+			estatisticas();
 			break;
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
