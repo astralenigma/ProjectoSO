@@ -29,10 +29,17 @@ Produto gerarInventario(){
   }
   return temp;
 }
+int calcularDistancia(int origem,int destino){
+  if(origem==destino){
+    return 0;
+  }
+  
+  return
+}
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  gerarInventario();
+  produto=gerarInventario();
   printf("O camião partiu.\n");
 }
 
@@ -52,4 +59,9 @@ void controloCamiao(){
     mover();
     descarregarCamiao();
   }
+}
+
+void entregarProduto(){
+  printf("O produto foi entregue na loja %d",produto.destino);
+  produto=NULL;
 }
