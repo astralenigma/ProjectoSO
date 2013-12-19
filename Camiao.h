@@ -11,6 +11,11 @@ int percursos[10][2]={
     {11,15},
     {15,11}
   };
+char *produtosTipo[]={
+  "Frescos",
+  "Produtos com validade",
+  "Não Perecíveis"
+};
 int posicao;
 Produto gerarInventario(){
   srand(time(NULL));
@@ -44,9 +49,9 @@ Produto gerarInventario(){
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  printf("O camião foi carregado com o contentor.");
+  printf("O camião foi carregado com o contentor.\n");
   produto=gerarInventario();
-  printf("O camião tem um produto %d para a loja %d",produto.tp,produto.destino);
+  printf("O camião tem um produto %d para a loja %d\n",produtosTipo[produto.tp],produto.destino);
   printf("O camião partiu.\n");
 }
 
