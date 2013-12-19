@@ -1,11 +1,17 @@
 Produto produto;
 int percursos[][]={
     {6,15},
-    {6,15},
-    {6,15},
-    {6,15},
+    {13,27},
+    {17,31},
+    {18,29},
+    {23,24},
+    {23,19},
+    {23,7},
+    {18,14},
+    {11,15},
+    {15,11}
   };
-No *posicaoActual=&percursos[0];
+int posicao;
 Produto gerarInventario(){
   srand(time(NULL));
   int randomL=(rand()%10)+1;
@@ -35,17 +41,12 @@ Produto gerarInventario(){
   }
   return temp;
 }
-int calcularDistancia(No *origem,No *destino,int distanciaPercorrida){
-  if(origem==destino){
-    return 0;
-  }
-  distanciaPercorrida+=1377;
-  return min(calcularDistancia( *origem, *destino,distanciaPercorrida));
-}
 
 void carregarCamiao(){
   carregarContentorCamiao();
+  printf("O camião foi carregado com o contentor.");
   produto=gerarInventario();
+  printf("O camião tem um produto %s para a loja %d",produto.tp,produto.destino);
   printf("O camião partiu.\n");
 }
 
@@ -54,17 +55,19 @@ void descarregarCamiao(){
   descarregarContentorCamiao();
 }
 
-void mover(){
-    printf("O condutor do camião está a planear a rota");
-    int tempoAPercorrer=calcularDistancia(posicaoActual,&percursos[produto.destino],0);
+void mover(int destino){
+    printf("O condutor do camião está a planear a rota\n");
+    int tempoAPercorrer=(int)(destino/velocidade);
     printf("O camião está a andar.\n");
-    sleep(0);
+    sleep(tempoAPercorrer);
+    printf("O camião chegou ao destino.\n");
 }
 
 void controloCamiao(){
   for(;;){
     carregarCamiao();
-    mover();
+    mover(percursos[produto.destino-1][0]);
+    mover(percursos[produto.destino-1][1]);
     descarregarCamiao();
   }
 }
