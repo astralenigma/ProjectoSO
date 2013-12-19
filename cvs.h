@@ -76,3 +76,4 @@ Navio ship;
 int *apNmrNaviosAEspera;
 int nmrNaviosAEspera=1;
 int nmrNaviosCriados;
+int *barcosAtracados=&nmrNaviosCriados;
