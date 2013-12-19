@@ -20,7 +20,7 @@ int /*valorPid[MAX_CAMIOES], aguardaPid, estadoCliente,*/ child_stat;
 int *ptr;
 
 //---------Variáveis Diversas
-int i,j;
+int i,j, nmrCamiao;
 double velocidade=0.8333333333333333;
 
 typedef enum {
