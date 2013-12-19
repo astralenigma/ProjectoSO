@@ -37,14 +37,7 @@ simular(){
                                                             perror("wait failed");
                                                 }
                                             }
-                                        printf("Atracaram %d Navios.\n"
-                                        +"Ficaram %d Navios por atender.\n"
-                                        +"Ficaram %d Contentores na Zona de Carga\n"
-                                        +"Ficaram %d Contentores na Zona de Descarga\n",
-                                        barcosAtracados,
-                                        apNmrNaviosAEspera,
-                                        contentoresNaZC,
-                                        contentoresNaZD);
+                                        printf("Atracaram %d Navios.\nFicaram %d Navios por atender.\nFicaram %d Contentores na Zona de Carga\nFicaram %d Contentores na Zona de Descarga\n",barcosAtracados,apNmrNaviosAEspera,contentoresNaZC,contentoresNaZD);
                                         //rel_sem(mutex);
                                         rel_sem(mutexDescarga);
                                         rel_sem(fullDescarga);
