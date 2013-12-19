@@ -62,7 +62,7 @@ void descarregarCamiao(){
 
 void mover(int destino){
     printf("O condutor do camião está a planear a rota\n");
-    printf("A velocidade do camião é %d",((int)velocidade));
+    printf("A velocidade do camião é %f",(velocidade));
     printf("O tempo a pecorrer é %d.\n", ((int)(destino/velocidade)));
     printf("O camião está a andar.\n");
     sleep(((int)(destino/velocidade)));
