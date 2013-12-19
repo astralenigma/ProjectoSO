@@ -51,7 +51,7 @@ void carregarCamiao(){
   carregarContentorCamiao();
   printf("O camião foi carregado com o contentor.\n");
   produto=gerarInventario();
-  printf("O camião tem um produto %d para a loja %d\n",produtosTipo[produto.tp],produto.destino);
+  printf("O camião tem um produto %s para a loja %d\n",produtosTipo[produto.tp],produto.destino);
   printf("O camião partiu.\n");
 }
 
