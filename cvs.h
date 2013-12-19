@@ -78,3 +78,4 @@ int nmrNaviosCriados;
 int *barcosAtracados;
 int *contentoresNaZC;
 int *contentoresNaZD;
+int *nmrCamioes;
