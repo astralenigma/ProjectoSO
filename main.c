@@ -41,7 +41,7 @@ main(){
 		case 2: 
 			alterarNumeroCamioesEmpresa();
 			alterarDimensaoZC();
-			alteraDimensaoZD();
+			alterarDimensaoZD();
 			simular();
 			break;
 		default : 
