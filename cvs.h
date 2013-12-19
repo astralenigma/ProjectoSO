@@ -74,6 +74,7 @@ Navio ship;
 //semaphore *apMutexCarga;
 
 int *apNmrNaviosAEspera;
-int nmrNaviosAEspera=1;
 int nmrNaviosCriados;
-int *barcosAtracados=&nmrNaviosCriados;
+int *barcosAtracados;
+int *contentoresNaZC;
+int *contentoresNaZD;
