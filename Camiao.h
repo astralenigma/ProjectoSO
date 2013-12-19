@@ -1,11 +1,18 @@
+Produto produto;
+
 Produto gerarInventario(){
   srand(time(NULL));
-  Produto produto={ rand()%3,rand()%365, rand()%10};
-  return produto;
+  switch(rand()%3){
+    case 0: return { frescos,1, rand()%10};
+    case 1: return { alimentar,rand()%365, rand()%10}
+    case 2: return { npereciveis,0, rand()%10};
+  }
+  
 }
 
 void carregarCamiao(){
   carregarContentorCamiao();
+  gerarInventario();
   printf("O camião partiu.\n");
 }
 
@@ -16,6 +23,7 @@ void descarregarCamiao(){
 
 void mover(){
   printf("O camião está a andar.\n");
+  sleep(0);
 }
 
 void controloCamiao(){
