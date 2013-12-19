@@ -1,5 +1,19 @@
 Produto produto;
-
+No percursos[]{
+    0, &percursos[1], 6, NULL, 0, NULL, 0,
+    1, &percursos[2], 7, percursos[9], 5, NULL, 0,
+    2, &percursos[1], 7, &percursos[3], 4, &percursos[4], 5,
+    3, &percursos[2], 4, NULL, 0, NULL, 0,
+    4, &percursos[2], 5, &percursos[5], 5, NULL, 0,
+    5, &percursos[4], 5, &percursos[6], 5, NULL, 0,
+    6, &percursos[5], 5, &percursos[8], 5, NULL, 0,
+    7, &percursos[11], 2, NULL, 0, NULL, 0,
+    8, &percursos[5], 5, &percursos[8], 5, NULL, 0,
+    9, &percursos[1], 5, &percursos[10], 4, NULL, 0,
+    10, &percursos[8], 3, &percursos[9], 4, &percursos[11], 6,
+    11, &percursos[7], 2, &percursos[10], 6, NULL, 0,
+    12, &percursos[11], 5, NULL, 0, NULL, 0
+  };
 Produto gerarInventario(){
   srand(time(NULL));
   int randomL=(rand()%10)+1;
@@ -29,12 +43,12 @@ Produto gerarInventario(){
   }
   return temp;
 }
-int calcularDistancia(int origem,int destino){
+int calcularDistancia(int origem,int destino,int distanciaPercorrida){
   if(origem==destino){
     return 0;
   }
   
-  return
+  return 12;
 }
 
 void carregarCamiao(){
