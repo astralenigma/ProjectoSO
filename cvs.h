@@ -21,7 +21,7 @@ int *ptr;
 
 //---------Variáveis Diversas
 int i,j;
-double velocidade=5/6;
+double velocidade=(5/6);
 
 typedef enum {
 frescos,alimentar,npereciveis
