@@ -19,7 +19,7 @@ void descarregarContentorNavio() {
 void carregarContentorNavio() {
 int in = 0;	
 	
-	while(!(ship.contentoresVazios>=40&&nmrNaviosAEspera>0)){
+	while(!(ship.contentoresVazios>=40&& *apNmrNaviosAEspera>0)){
 		//Decrementar o nº de contentores na zona de carga
 		P(fullCarga);
 		P(mutexCarga);
