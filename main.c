@@ -34,7 +34,6 @@ main(){
 	printf("----------Opção 3- Estatisticas---------------\n");
 	printf("----------Opção 4- Sair-----------------------\n");
 	int x=0;
-	char *erro;
 	printf("Introduza a opção que deseja efectuar\n");
 	scanf("%d", &x);
 	switch (x){
@@ -63,11 +62,8 @@ main(){
 			break;
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
-			
 			break;
 		};
-		scanf("%s",erro);
-	
        }
 	
 }
