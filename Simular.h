@@ -28,6 +28,8 @@ simular(){
 	esMaxIC=(int*)ptr++;
 	esMinIC=(int*)ptr++;
 	esMedIC=(int*)ptr++;
+	nmrMaxContentoresZC=(int*)ptr++;
+	nmrMaxContentoresZD=(int*)ptr++;
     	//indeciso sobre o que usar
     	//apontador=(tipo do apntador*)ptr++;
     	//Inicializar as variáveis na memória
@@ -39,6 +41,8 @@ simular(){
 	*esMedIC=0;
 	*nmrContentoresZD=0;
 	*nmrContentoresZC=0;
+	*nmrMaxContentoresZC=0;
+	*nmrMaxContentoresZD=0;
 	*barcosAtracados=0;
 	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
