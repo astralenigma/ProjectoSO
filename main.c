@@ -24,6 +24,7 @@ main(){
     	barcosAtracados=(int*)ptr++;
     	nmrCamioes=(int*)ptr++;
     	*barcosAtracados=0;
+    	*apNmrNaviosAEspera=0;
     	//indeciso sobre o que usar
     	//apNmrNaviosAEspera=(int*)ptr++; 
 	for( ; ;){	
