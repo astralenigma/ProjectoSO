@@ -6,12 +6,14 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define SHMKEY (key_t)0x10
+
 //-------Variáveis alteradas pelo utilizador
 int maxCamioes;       /* max. # of truck processes        */
 int maxChilds;        /* max. # of child processes        */
 int maxSCargo;        /* max. cargo of the ship        */
 int maxUZCargo;        /* max. cargo of the unloading zone        */
 int maxLZCargo;        /* max. cargo of the loading zone        */
+
 //---------Processos e memória
 int wait_pid;
 int shmid;// id da memoria partilhada
@@ -33,7 +35,6 @@ int datavalidade;
 int destino;
 }Produto;
 
-
 typedef struct {
 Produto p;
 }Contentor;
@@ -53,6 +54,7 @@ typedef struct node{
   struct node *no3;
   int distanciaNo3;
 }No;
+
 //------Semáforos
 semaphore fullDescarga;
 semaphore emptyDescarga;
@@ -60,6 +62,7 @@ semaphore fullCarga;
 semaphore emptyCarga;
  
 semaphore semaNaviosAEspera;
+
 //------Memória partilhada
 Navio ship;
 
@@ -69,3 +72,11 @@ int *barcosAtracados;
 int *contentoresNaZC;
 int *contentoresNaZD;
 int *nmrCamioes;
+int *esMaxTN;
+int *esMinTN;
+int *esMedTN;
+int *esMaxIC;
+int *esMinIC;
+int *esMedIC;
+int *esMaxZDC;
+int *esMaxZCC;
