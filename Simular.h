@@ -43,7 +43,6 @@ simular(){
 	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
 	for (i = 0; i < maxChilds; i++) {
-                printf("%d\n", i);
                 child_pid[i] = fork();
                 switch (child_pid[i]) {
                         case -1: /* error: no process created*/
@@ -51,14 +50,14 @@ simular(){
                                 exit(1);
                         break;
                         case 0: /*child process*/
-                                if (i == 1) {
+                                if (i == 0) {
                                 	printf("Não estás a funcar pq?");
                                         criarNavios();
                                 }
-                                if (i == 2) {
+                                if (i == 1) {
                                         controloNavio();
                                 }
-                                if (i >= 3) {
+                                if (i >= 2) {
                                 	nmrCamiao=i-1;
                                         controloCamiao();
                                 }
