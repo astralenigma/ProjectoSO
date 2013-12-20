@@ -10,7 +10,7 @@ void descarregarContentorNavio() {
 		ship.contentoresCheios--;
 		printf("O navio está a descarregar\n");
 		sleep(5);
-		++*nmrContentoresZD;
+		*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,++*nmrContentoresZD);
 		printf("O navio descarregou %d contentores.\n",out);
 		//Aumentar o nº de contentores na zona de descarga
 		V(fullDescarga);
@@ -31,7 +31,7 @@ int in = 0;
 		printf("O navio está a carregar.\n");
 		sleep(7);
 		printf("O navio carregou %d contentores.\n",in);
-		++*nmrContentoresZC;
+		*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,--*nmrContentoresZC);
 		V(emptyCarga);
 		V(mutexCarga);
 		if(ship.contentoresVazios == 50){
@@ -44,10 +44,10 @@ void carregarContentorCamiao() {
 	//Diminuir o nº de contentores na zona de descarga
 	P(fullDescarga);
 	P(mutexDescarga);
-	++*nmrContentoresZD;
 	printf("Um camião está a carregar um contentor.\n");
 	sleep(5);
 	printf("Um camião foi carregado com um contentor.\n");
+	*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,--*nmrContentoresZD);
 	//Incrementar o nº de espaços na zona de descarga
 	V(emptyDescarga);
 	V(mutexCarga);
@@ -59,7 +59,7 @@ void descarregarContentorCamiao() {
 	P(mutexCarga);	
 	printf("Um camião está a descarregar um contentor.\n");
 	sleep(4);
-	++*nmrContentoresZC;
+	*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,++*nmrContentoresZC);
 	printf("Um Camião descarregou um contentor.\n");
 	//Aumentar o nº de contentores na zona de carga 
 	V(fullCarga);
