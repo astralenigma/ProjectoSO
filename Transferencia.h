@@ -1,3 +1,4 @@
+//método para descarregar um contentor do Navio para zona de descarga
 void descarregarContentorNavio() {
 	int out = 0;
 	while(ship.contentoresCheios !=0 ) {
@@ -14,7 +15,7 @@ void descarregarContentorNavio() {
 		
 	}
 }
-
+//Método para carregar um contentor do Navio da zona de carga
 void carregarContentorNavio() {
 int in = 0;	
 	
@@ -33,23 +34,24 @@ int in = 0;
 		}	
 	}
 }
-
+//Método para carregar um contentor de um Camiao da zona de descarga
 void carregarContentorCamiao() {
 	//Diminuir o nº de contentores na zona de carga 
 	P(fullDescarga);
-	//Incrementar o nº de espaços na zona de carga
+	
 	printf("Um camião está a carregar um contentor.\n");
 	sleep(5);
 	printf("Um camião foi carregado com um contentor.\n");
+	//Incrementar o nº de espaços na zona de carga
 	V(emptyDescarga);
 }
-
+//Método para descarregar um contentor de um Camiao para zona de carga
 void descarregarContentorCamiao() {
 	//Decrementar o nº de espaços na zona de carga
 	P(emptyCarga);
 	printf("Um camião está a descarregar um contentor.\n");
 	sleep(4);
-	//Aumentar o nº de contentores na zona de carga 
 	printf("Um Camião descarregou um contentor.\n");
+	//Aumentar o nº de contentores na zona de carga 
 	V(fullCarga);
 }
