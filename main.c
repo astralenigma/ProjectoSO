@@ -63,7 +63,7 @@ main(){
 			estatisticas();
 			break;
 		default : 
-			printf("O caracter introduzido é invalido");
+			printf("O caracter introduzido é invalido.\n");
 			break;
 		};
        }
