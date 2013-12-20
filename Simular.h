@@ -4,7 +4,7 @@ void inicializarSemaforos(){
 	emptyDescarga=init_sem(maxUZCargo);
 	fullCarga=init_sem(0);
 	emptyCarga=init_sem(maxLZCargo);
-	semaNaviosAEspera = init_sem(1);
+	semaNaviosAEspera = init_sem(0);
 }
 //Método que inicia a simulação
 simular(){
@@ -19,7 +19,7 @@ simular(){
                         break;
                         case 0: /*child process*/
                                 if (i == 0) {
-                                        criarNavio();
+                                        criarNavios();
                                 }
                                 if (i == 1) {
                                         controloNavio();
