@@ -37,7 +37,7 @@ main(){
 	printf("----------Opção 4- Sair-----------------------\n");
 	char x;
 	printf("Introduza a opção que deseja efectuar\n");
-	scanf("%d", &x);
+	scanf("%s", &x);
 	switch (x){
 		case '1':
 			simular();
