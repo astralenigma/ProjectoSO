@@ -1,16 +1,17 @@
-
 Produto produto;
-int percursos[10][2]={
-    { 6,15},
-    {13,27},
-    {17,31},
-    {18,29},
-    {23,24},
-    {23,19},
-    {23, 7},
-    {18,14},
-    {11,15},
-    {15,11}
+int percursos[11][11]={//origem,destino
+    //P,L1,L2,L3,L4,L5,L6,L7,L8,L9,L10
+    {0,6,13,17,18,23,23,23,18,11,15},//Porto
+    {20,0,7,11,12,17,17,17,12,5,9},//L1
+    {27,7,0,4,5,10,15,24,19,12,16},//L2
+    {31,11,4,0,9,14,19,28,23,16,20},//L3
+    {29,12,5,9,0,5,10,26,15,17,18},//L4
+    {24,17,10,14,5,0,5,21,10,17,13},//L5
+    {19,17,15,19,10,5,0,16,5,12,8},//L6
+    {7,17,24,28,26,21,16,0,11,12,8},//L7
+    {14,12,19,23,15,10,5,11,0,7,3},//L8
+    {15,5,12,16,17,17,12,12,7,0,4},//L9
+    {11,9,16,20,18,13,8,8,3,4,0}//L10
   };
 char *produtosTipo[]={
   "Frescos",
@@ -72,8 +73,8 @@ void mover(int destino){
 void controloCamiao(){
   for(;;){
     carregarCamiao();
-    mover(percursos[(produto.destino-1)][0]);
-    mover(percursos[(produto.destino-1)][1]);
+    mover(percursos[0][(produto.destino)]);
+    mover(percursos[(produto.destino)][0]);
     descarregarCamiao();
   }
 }
