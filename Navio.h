@@ -2,7 +2,7 @@
 void criarNavio(){
 	V(semaNaviosAEspera);
 	(*apNmrNaviosAEspera)++;
-	printf("Foi criado um navio");
+	printf("Estão %d navios à espera.",*apNmrNaviosAEspera);
 }
 //Metodo que adiciona navios à lista de espera.
 void criarNavios(){
