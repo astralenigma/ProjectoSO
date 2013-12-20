@@ -34,7 +34,7 @@ main(){
 	printf("----------Opção 3- Estatisticas---------------\n");
 	printf("----------Opção 4- Sair-----------------------\n");
 	int x=0;
-	*char erro;
+	char *erro;
 	printf("Introduza a opção que deseja efectuar\n");
 	scanf("%d", &x);
 	switch (x){
