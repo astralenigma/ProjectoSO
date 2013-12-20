@@ -54,24 +54,14 @@ typedef struct node{
   int distanciaNo3;
 }No;
 //------Semáforos
-semaphore mutexDescarga;
 semaphore fullDescarga;
 semaphore emptyDescarga;
-
-semaphore mutexCarga;
 semaphore fullCarga;
 semaphore emptyCarga;
  
 semaphore semaNaviosAEspera;
-semaphore mutex;
 //------Memória partilhada
 Navio ship;
-//semaphore *apMutexDescarga;
-//semaphore *apFullDescarga;
-//semaphore *apEmptyDescarga;
-//semaphore *apMutexCarga;
-//semaphore *apMutexCarga;
-//semaphore *apMutexCarga;
 
 int *apNmrNaviosAEspera;
 int nmrNaviosCriados;
