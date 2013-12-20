@@ -43,6 +43,7 @@ simular(){
                                         rel_sem(emptyDescarga);
                                         rel_sem(fullCarga);
                                         rel_sem(emptyCarga);
+                                        rel_sem(semaNaviosAEspera);
                                         shmdt(addr);
                                         shmctl(shmid, IPC_RMID, 0);
                                 }
