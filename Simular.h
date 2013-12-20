@@ -19,6 +19,8 @@ simular(){
     	apNmrNaviosAEspera=(int*)ptr++;
     	barcosAtracados=(int*)ptr++;
     	nmrCamioes=(int*)ptr++;
+    	nmrContentoresZC=(int*)ptr++;
+    	nmrContentoresZD=(int*)ptr++;
     	esMaxTN=(int*)ptr++;
     	esMinTN=(int*)ptr++;
     	esMedTN=(int*)ptr++;
@@ -34,6 +36,8 @@ simular(){
 	*esMaxIC=0;
 	*esMinIC=0;
 	*esMedIC=0;
+	*nmrContentoresZD=0;
+	*nmrContentoresZC=0;
     	*barcosAtracados=0;
     	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
@@ -47,6 +51,7 @@ simular(){
                         break;
                         case 0: /*child process*/
                                 if (i == 0) {
+                                	printf("Não estás a funcar pq?");
                                         criarNavios();
                                 }
                                 if (i == 1) {
@@ -65,7 +70,10 @@ simular(){
                                                             perror("wait failed");
                                                 }
                                             }
-                                        printf("Atracaram %d* Navios.\nFicaram %d Navios por atender.\nFicaram %d Contentores na Zona de Carga\nFicaram %d Contentores na Zona de Descarga\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD);
+                                        printf( "Atracaram %d* Navios.\n"
+                                        	"Ficaram %d Navios por atender.\n"
+                                        	"Ficaram %d Contentores na Zona de Carga\n"
+                                        	"Ficaram %d Contentores na Zona de Descarga\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD);
                                         //rel_sem(mutex);
                                         rel_sem(fullDescarga);
                                         rel_sem(emptyDescarga);
