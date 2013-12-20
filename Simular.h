@@ -112,5 +112,5 @@ alterarDimensaoZD(){
 	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
 }
 estatisticas(){
- printf("HELLLLOOOOO");
+ printf("Não tá a funcionar");
 }
