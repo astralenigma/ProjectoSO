@@ -50,7 +50,7 @@ void carregarContentorCamiao() {
 	*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,--*nmrContentoresZD);
 	//Incrementar o nº de espaços na zona de descarga
 	V(emptyDescarga);
-	V(mutexDesCarga);
+	V(mutexDescarga);
 }
 //Método para descarregar um contentor de um Camiao para zona de carga
 void descarregarContentorCamiao() {
