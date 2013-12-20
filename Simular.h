@@ -1,3 +1,4 @@
+//Método que iniciliza os semáforos
 void inicializarSemaforos(){
 	fullDescarga=init_sem(0);
 	emptyDescarga=init_sem(maxUZCargo);
@@ -5,7 +6,7 @@ void inicializarSemaforos(){
 	emptyCarga=init_sem(maxLZCargo);
 	semaNaviosAEspera = init_sem(1);
 }
-
+//Método que inicia a simulação
 simular(){
 	int child_pid[maxChilds];
 	for (i = 0; i < maxChilds; i++) {
@@ -48,29 +49,25 @@ simular(){
                         break;
                 } /*end switch*/
         }
-}       
+}
+//Métoddo que altera o número de camioes
 alterarNumeroCamioesEmpresa(){
 	printf("Insira o número maximo de camiões da empresa\n");
 	scanf("%d", &maxCamioes);
 	printf("Numero de camioes disponiveis da empresa %d.\n", maxCamioes);
-	
 }   
-     
+//Métoddo que altera a dimensão da zona de carga
 alterarDimensaoZC(){
      	printf("Insira a dimensão da Zona de Carga\n");
 	scanf("%d", &maxLZCargo);
 	printf("Dimensão da zona de Carga %d.\n", maxLZCargo);
-	
 }
-     
+//Métoddo que altera a dimensão da zona de descarga
 alterarDimensaoZD(){
 	printf("Insira a dimensão da Zona de Descarga\n");
 	scanf("%d", &maxUZCargo);
 	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
-     	
 }
-
 estatisticas(){
  printf("HELLLLOOOOO");
 }
-
