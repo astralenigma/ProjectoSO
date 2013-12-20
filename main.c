@@ -26,42 +26,44 @@ main(){
     	*barcosAtracados=0;
     	*apNmrNaviosAEspera=0;
     	//indeciso sobre o que usar
-    	//apNmrNaviosAEspera=(int*)ptr++; 
+    	//apNmrNaviosAEspera=(int*)ptr++;
+    	
+    	
 	for( ; ;){	
 	printf("---------------------Menu---------------------\n");
 	printf("----------Opção 1- Iniciar Simulação----------\n");
 	printf("----------Opção 2- Alterar Valores------------\n");
 	printf("----------Opção 3- Estatisticas---------------\n");
 	printf("----------Opção 4- Sair-----------------------\n");
-	int x=0;
+	char x;
 	printf("Introduza a opção que deseja efectuar\n");
 	scanf("%d", &x);
 	switch (x){
-		case 1:
+		case '1':
 			simular();
 			break;
-		case 2: 
+		case '2': 
 		printf("---------------------------Menu------------------------------------\n"
 			"----------Opção 1- Alterar Número de Camiões-----------------------\n"
 			"----------Opção 2- Alterar Dimensão da Zona de Carga---------------\n"
 			"----------Opção 3- Alterar Dimensão da Zona de Descarga------------\n"
 			"----------Opção 4- Sair--------------------------------------------\n");
 			printf("Introduza a opção que deseja efectuar\n");
-			int y;
-			scanf("%d", &y);
+			char y;
+			scanf("%s", &y);
 			switch(y){
-			case 1:alterarNumeroCamioesEmpresa();
+			case '1':alterarNumeroCamioesEmpresa();
 			break;
-			case 2:alterarDimensaoZC();
+			case '2':alterarDimensaoZC();
 			break;
-			case 3:alterarDimensaoZD();
+			case '3':alterarDimensaoZD();
 			}
 			break;
-		case 3:
+		case '3':
 			estatisticas();
 			break;
 		default : 
-			printf("O numero que introduziu esta incorrecto.");
+			printf("O caracter introduzido é invalido");
 			break;
 		};
        }
