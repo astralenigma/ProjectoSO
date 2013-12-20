@@ -33,7 +33,7 @@ main(){
 	printf("----------Opção 2- Alterar Valores------------\n");
 	printf("----------Opção 3- Estatisticas---------------\n");
 	
-	int x;
+	int x=0;
 	printf("Introduza a opção que deseja efectuar\n");
 	scanf("%d", &x);
 	switch (x){
@@ -62,7 +62,7 @@ main(){
 			break;
 		default : 
 			printf("O numero que introduziu esta incorrecto.");
-			
+			break;
 		};
 	
        }
