@@ -8,6 +8,34 @@ void inicializarSemaforos(){
 }
 //Método que inicia a simulação
 simular(){
+	
+	/* exclusao mutua */
+	inicializarSemaforos();
+	shmid = shmget(SHMKEY, 128, 0777|IPC_CREAT);
+	addr = (char*) shmat(shmid, 0, 0);
+	//A alocar as variáveis na memória
+    	int *ptr;
+    	ptr = (int*) addr;
+    	apNmrNaviosAEspera=(int*)ptr++;
+    	barcosAtracados=(int*)ptr++;
+    	nmrCamioes=(int*)ptr++;
+    	esMaxTN=(int*)ptr++;
+    	esMinTN=(int*)ptr++;
+    	esMedTN=(int*)ptr++;
+    	esMaxIC=(int*)ptr++;
+    	esMinIC=(int*)ptr++;
+    	esMedIC=(int*)ptr++;
+    	//indeciso sobre o que usar
+    	//apontador=(tipo do apntador*)ptr++;
+    	//Inicializar as variáveis na memória
+    	*esMaxTN=0;
+	*esMinTN=0;
+	*esMedTN=0;
+	*esMaxIC=0;
+	*esMinIC=0;
+	*esMedIC=0;
+    	*barcosAtracados=0;
+    	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
 	for (i = 0; i < maxChilds; i++) {
                 // printf("%d\n", i);
