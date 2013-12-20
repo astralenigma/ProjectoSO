@@ -40,6 +40,6 @@ void controloNavio(){
 		printf(ANSI_COLOR_GREEN"O navio nº %d atracou.\n"ANSI_COLOR_RESET,ship.id);
 		descarregarContentorNavio();
 		carregarContentorNavio();
-		printf("O navio nº %d partiu.\n",ship.id);
+		printf(ANSI_COLOR_GREEN"O navio nº %d partiu.\n"ANSI_COLOR_RESET,ship.id);
 	}
 }
