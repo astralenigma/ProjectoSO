@@ -4,7 +4,7 @@
 #include "Camiao.h"
 #include "Navio.h"
 #include "Simular.h"
-main(){
+int main(void){
 	maxCamioes=10;
 	maxChilds = maxCamioes + 2;
 	maxSCargo = 50;
@@ -62,6 +62,8 @@ main(){
 		case '3':
 			estatisticas();
 			break;
+		case '4':
+			return 0;
 		default : 
 			printf("O caracter introduzido é invalido.\n");
 			break;
