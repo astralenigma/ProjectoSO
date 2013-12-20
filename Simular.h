@@ -42,7 +42,6 @@ simular(){
 	*barcosAtracados=0;
 	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
-	fflush(stdout);
 	for (i = 0; i < maxChilds; i++) {
                 child_pid[i] = fork();
                 switch (child_pid[i]) {
