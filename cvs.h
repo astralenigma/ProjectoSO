@@ -60,7 +60,8 @@ semaphore fullDescarga;
 semaphore emptyDescarga;
 semaphore fullCarga;
 semaphore emptyCarga;
- 
+semaphore mutexCarga;
+semaphore mutexDescarga;
 semaphore semaNaviosAEspera;
 
 //------Memória partilhada
