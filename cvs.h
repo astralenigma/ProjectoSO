@@ -80,3 +80,5 @@ int *esMinIC;
 int *esMedIC;
 int *esMaxZDC;
 int *esMaxZCC;
+int *nmrContentoresZD;
+int *nmrContentoresZC;
