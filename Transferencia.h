@@ -14,7 +14,7 @@ void descarregarContentorNavio() {
 		printf(ANSI_COLOR_RED"O navio descarregou %d contentores.\n"ANSI_COLOR_RESET,out);
 		//Aumentar o nº de contentores na zona de descarga
 		V(fullDescarga);
-		V(mutexCarga);
+		V(mutexDescarga);
 	}
 }
 //Método para carregar um contentor do Navio da zona de carga
@@ -50,7 +50,7 @@ void carregarContentorCamiao() {
 	*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,--*nmrContentoresZD);
 	//Incrementar o nº de espaços na zona de descarga
 	V(emptyDescarga);
-	V(mutexCarga);
+	V(mutexDesCarga);
 }
 //Método para descarregar um contentor de um Camiao para zona de carga
 void descarregarContentorCamiao() {
