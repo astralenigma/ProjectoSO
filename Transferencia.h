@@ -2,6 +2,7 @@
 void descarregarContentorNavio() {
 	int out = 0;
 	while(ship.contentoresCheios !=0 ) {
+		fflush(stdout);
 		//Decrementar o nº de contentores do navio no porto
 		P(mutexDescarga);
 		P(emptyDescarga);
@@ -22,6 +23,7 @@ int in = 0;
 	
 	while(!(ship.contentoresVazios>=40&& *apNmrNaviosAEspera>0)){
 		//Decrementar o nº de contentores na zona de carga
+		fflush(stdout);
 		P(mutexCarga);
 		P(fullCarga);
 		//Incrementar o nº de contentores do navio no porto
@@ -41,6 +43,7 @@ int in = 0;
 //Método para carregar um contentor de um Camiao da zona de descarga
 void carregarContentorCamiao() {
 	//Diminuir o nº de contentores na zona de descarga
+	fflush(stdout);
 	P(mutexDescarga);
 	P(fullDescarga);
 	++*nmrContentoresZD;
@@ -54,6 +57,7 @@ void carregarContentorCamiao() {
 //Método para descarregar um contentor de um Camiao para zona de carga
 void descarregarContentorCamiao() {
 	//Decrementar o nº de espaços na zona de carga
+	fflush(stdout);
 	P(mutexCarga);
 	P(emptyCarga);
 	printf("Um camião está a descarregar um contentor.\n");
