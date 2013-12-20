@@ -51,23 +51,23 @@ Produto gerarInventario(){
 
 void carregarCamiao(){
   carregarContentorCamiao();
-  printf("O camião nº %d foi carregado com o contentor.\n", nmrCamiao);
+  printf(ANSI_COLOR_BLUE "O camião nº %d foi carregado com o contentor.\n"ANSI_COLOR_RESET, nmrCamiao);
   produto=gerarInventario();
-  printf("O camião nº %d tem um produto %s para a loja %d\n", nmrCamiao,produtosTipo[produto.tp],produto.destino);
-  printf("O camião nº %d partiu.\n", nmrCamiao);
+  printf(ANSI_COLOR_BLUE "O camião nº %d tem um produto %s para a loja %d\n"ANSI_COLOR_RESET, nmrCamiao,produtosTipo[produto.tp],produto.destino);
+  printf(ANSI_COLOR_BLUE "O camião nº %d partiu.\n"ANSI_COLOR_RESET, nmrCamiao);
 }
 
 void descarregarCamiao(){
-  printf("O camião  nº %d chegou.\n",nmrCamiao);
+  printf(ANSI_COLOR_BLUE "O camião  nº %d chegou.\n"ANSI_COLOR_RESET,nmrCamiao);
   descarregarContentorCamiao();
 }
 
 void mover(int destino){
-    printf("O condutor do camião nº %d está a planear a rota\n",nmrCamiao);
+    printf(ANSI_COLOR_BLUE "O condutor do camião nº %d está a planear a rota\n"ANSI_COLOR_RESET,nmrCamiao);
     //printf("O tempo a pecorrer é %d.\n", ((int)(destino/velocidade)));
-    printf("O camião nº %d está a andar.\n",nmrCamiao);
+    printf(ANSI_COLOR_BLUE "O camião nº %d está a andar.\n"ANSI_COLOR_RESET,nmrCamiao);
     sleep(((int)(destino/velocidade)));
-    printf("O camião  nº %d chegou ao destino.\n",nmrCamiao);
+    printf(ANSI_COLOR_BLUE "O camião  nº %d chegou ao destino.\n"ANSI_COLOR_RESET,nmrCamiao);
 }
 
 void controloCamiao(){
@@ -80,6 +80,6 @@ void controloCamiao(){
 }
 
 void entregarProduto(){
-  printf("O camião  nº %d entregou o produto na loja %d",nmrCamiao,produto.destino);
+  printf(ANSI_COLOR_BLUE"O camião  nº %d entregou o produto na loja %d"ANSI_COLOR_RESET,nmrCamiao,produto.destino);
   //somar variàvel na memória relacionado aos produtos entregados.
 }
