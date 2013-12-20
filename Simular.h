@@ -54,14 +54,14 @@ simular(){
                                 exit(1);
                         break;
                         case 0: /*child process*/
-                                if (i == 0) {
+                                if (i == 1) {
                                 	printf("Não estás a funcar pq?");
                                         criarNavios();
                                 }
-                                if (i == 1) {
+                                if (i == 2) {
                                         controloNavio();
                                 }
-                                if (i >= 2) {
+                                if (i >= 3) {
                                 	nmrCamiao=i-1;
                                         controloCamiao();
                                 }
