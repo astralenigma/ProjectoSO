@@ -1,22 +1,26 @@
-//Metodo que devolve um navio usar para criar o navio.
-void criarNavio(){
+//Metodo que adiciona navios à lista de espera.
+void criarNavios(){
+	criarNavio();
 	alarm(LIFETIME);
 	srand(time(NULL));
 	for(;;){
 		int random=(300+rand()%61);
 		sleep(random);
-		V(semaNaviosAEspera);
-		(*apNmrNaviosAEspera)++;
-		printf("Foi criado um navio");
+		criarNavio();
 	}	
 }
-
+//Metodo que cria Navios
+void criarNavio(){
+	V(semaNaviosAEspera);
+	(*apNmrNaviosAEspera)++;
+	printf("Foi criado um navio");
+}
 //Metodo para colocar o navio activo
 void atracarNavio(){
 	srand(time(NULL));
 	P(semaNaviosAEspera);
 	(*apNmrNaviosAEspera)--;
-	Navio navio ={++*barcosAtracados,(maxSCargo*0.8+(rand()%(int)(maxSCargo*0.2)+1)), 0};
+	Navio navio ={++(*barcosAtracados),(maxSCargo*0.8+(rand()%(int)(maxSCargo*0.2)+1)), 0};
 	ship=navio;
 }
 
