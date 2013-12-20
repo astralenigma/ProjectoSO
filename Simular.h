@@ -1,8 +1,6 @@
 void inicializarSemaforos(){
-	mutexDescarga=init_sem(1);
 	fullDescarga=init_sem(0);
 	emptyDescarga=init_sem(maxUZCargo);
-	mutexCarga=init_sem(1);
 	fullCarga=init_sem(0);
 	emptyCarga=init_sem(maxLZCargo);
 	semaNaviosAEspera = init_sem(1);
@@ -40,10 +38,8 @@ simular(){
                                             }
                                         printf("Atracaram %d* Navios.\nFicaram %d Navios por atender.\nFicaram %d Contentores na Zona de Carga\nFicaram %d Contentores na Zona de Descarga\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD);
                                         //rel_sem(mutex);
-                                        rel_sem(mutexDescarga);
                                         rel_sem(fullDescarga);
                                         rel_sem(emptyDescarga);
-                                        rel_sem(mutexCarga);
                                         rel_sem(fullCarga);
                                         rel_sem(emptyCarga);
                                         shmdt(addr);
