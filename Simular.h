@@ -39,8 +39,8 @@ simular(){
 	*esMedIC=0;
 	*nmrContentoresZD=0;
 	*nmrContentoresZC=0;
-    	*barcosAtracados=0;
-    	*apNmrNaviosAEspera=0;
+	*barcosAtracados=0;
+	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
 	for (i = 0; i < maxChilds; i++) {
                 // printf("%d\n", i);
