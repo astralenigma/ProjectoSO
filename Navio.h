@@ -1,3 +1,9 @@
+//Metodo que cria Navios
+void criarNavio(){
+	V(semaNaviosAEspera);
+	(*apNmrNaviosAEspera)++;
+	printf("Foi criado um navio");
+}
 //Metodo que adiciona navios à lista de espera.
 void criarNavios(){
 	criarNavio();
@@ -8,12 +14,6 @@ void criarNavios(){
 		sleep(random);
 		criarNavio();
 	}	
-}
-//Metodo que cria Navios
-void criarNavio(){
-	V(semaNaviosAEspera);
-	(*apNmrNaviosAEspera)++;
-	printf("Foi criado um navio");
 }
 //Metodo para colocar o navio activo
 void atracarNavio(){
