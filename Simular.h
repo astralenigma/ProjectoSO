@@ -5,6 +5,8 @@ void inicializarSemaforos(){
 	fullCarga=init_sem(0);
 	emptyCarga=init_sem(maxLZCargo);
 	semaNaviosAEspera = init_sem(0);
+	mutexCarga=init_sem(1);
+	mutexDescarga=init_sem(1);
 }
 //Método que inicia a simulação
 simular(){
@@ -79,6 +81,8 @@ simular(){
                                         rel_sem(fullCarga);
                                         rel_sem(emptyCarga);
                                         rel_sem(semaNaviosAEspera);
+                                        rel_sem(mutexCarga);
+                                        rel_sem(mutexDescarga);
                                         shmdt(addr);
                                         shmctl(shmid, IPC_RMID, 0);
                                 }
