@@ -59,7 +59,7 @@ simular(){
                         break;
                         case 0: /*child process*/
                                 if (i == 0) {
-                                	printf("Não estás a funcar pq?");
+                                //	printf("Não estás a funcar pq?");
                                         criarNavios();
                                 }
                                 if (i == 1) {
@@ -119,6 +119,12 @@ alterarDimensaoZD(){
 	scanf("%d", &maxUZCargo);
 	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
 }
-estatisticas(){
- printf("Não tá a funcionar");
+cronometro(){
+	time_t a=time(NULL);
+	P(cronometro);
+	time_t b=time(NULL);
+	double seconds=difftime(b,a);
+	*tempoMax=max(*tempoMax,seconds);;
+	*tempoMin=min(*tempoMin,seconds);
+	*tempoMed=((*tempoMed)+seconds)/2;
 }
