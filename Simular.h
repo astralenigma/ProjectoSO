@@ -7,6 +7,8 @@ void inicializarSemaforos(){
 	semaNaviosAEspera = init_sem(0);
 	mutexCarga=init_sem(1);
 	mutexDescarga=init_sem(1);
+	semaCronometroInicio=init_sem(0);
+	semaCronometroFim=init_sem(0);
 }
 //Método que inicia a simulação
 simular(){
@@ -32,6 +34,9 @@ simular(){
 	nmrMaxContentoresZD=(int*)ptr++;
 	nmrMinContentoresZC=(int*)ptr++;
 	nmrMinContentoresZD=(int*)ptr++;
+	tempoMax=(double*)ptr++;
+	tempoMed=(double*)ptr++;
+	tempoMin=(double*)ptr++;
     	//indeciso sobre o que usar
     	//apontador=(tipo do apntador*)ptr++;
     	//Inicializar as variáveis na memória
@@ -49,6 +54,9 @@ simular(){
 	*nmrMinContentoresZD=0;
 	*barcosAtracados=0;
 	*apNmrNaviosAEspera=0;
+	*tempoMax=0;
+	*tempoMin=0;
+	*tempoMed=0;
 	int child_pid[maxChilds];
 	for (i = 0; i < maxChilds; i++) {
                 child_pid[i] = fork();
@@ -85,7 +93,14 @@ simular(){
                                         	"Máximo de Contentores na Zona de Descarga: %d\n"
                                         	"Máximo de Contentores na Zona de Carga: %d\n"
                                         	"Mínimo de Contentores na Zona de Descarga: %d\n"
-                                        	"Mínimo de Contentores na Zona de Carga: %d\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD,*nmrMaxContentoresZD,*nmrMaxContentoresZC,*nmrMinContentoresZD,*nmrMinContentoresZC);
+                                        	"Mínimo de Contentores na Zona de Carga: %d\n"
+                                        	"Tempo Máximo de Espera do Navio: %.f\n"
+                                        	"Tempo Médio de Espera do Navio: %.f\n"
+                                        	"Tempo Minimo de Espera do Navio:%.f\n",
+                                        	*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,
+                                        	*contentoresNaZD,*nmrMaxContentoresZD,*nmrMaxContentoresZC,
+                                        	*nmrMinContentoresZD,*nmrMinContentoresZC,*tempoMax,
+                                        	*tempoMin,*tempoMed);
                                         //rel_sem(mutex);
                                         rel_sem(fullDescarga);
                                         rel_sem(emptyDescarga);
@@ -94,6 +109,7 @@ simular(){
                                         rel_sem(semaNaviosAEspera);
                                         rel_sem(mutexCarga);
                                         rel_sem(mutexDescarga);
+                                        rel_sem(semaCronometro);
                                         shmdt(addr);
                                         shmctl(shmid, IPC_RMID, 0);
                                 }
@@ -120,11 +136,13 @@ alterarDimensaoZD(){
 	printf("Dimensão da zona de Descarga %d.\n", maxUZCargo);
 }
 cronometro(){
+	//P(semaCronometroInicio);
 	time_t a=time(NULL);
-	P(cronometro);
+	P(semaCronometroFim);
 	time_t b=time(NULL);
 	double seconds=difftime(b,a);
 	*tempoMax=max(*tempoMax,seconds);;
 	*tempoMin=min(*tempoMin,seconds);
 	*tempoMed=((*tempoMed)+seconds)/2;
+	return;
 }
