@@ -1,9 +1,8 @@
-
 //Metodo que cria Navios
 void criarNavio(){
 	V(semaNaviosAEspera);
 	//V(semaCronometroInicio);
-	pide = fork();
+	int pide = fork();
 	if(pide==0){
 		cronometro();
 	}else{
