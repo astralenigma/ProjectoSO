@@ -62,6 +62,7 @@ typedef struct node{
   int distanciaNo3;
 }No;
 
+Navio ship;
 //------Semáforos
 semaphore fullDescarga;
 semaphore emptyDescarga;
@@ -70,10 +71,10 @@ semaphore emptyCarga;
 semaphore mutexCarga;
 semaphore mutexDescarga;
 semaphore semaNaviosAEspera;
+semaphore semaCronometroInicio;
+semaphore semaCronometroFim;
 
 //------Memória partilhada
-Navio ship;
-
 int *apNmrNaviosAEspera;
 int nmrNaviosCriados;
 int *barcosAtracados;
