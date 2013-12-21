@@ -11,6 +11,7 @@ void descarregarContentorNavio() {
 		printf(ANSI_COLOR_RED"O navio está a descarregar\n"ANSI_COLOR_RESET);
 		sleep(5);
 		*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,++*nmrContentoresZD);
+		printf(ANSI_COLOR_PINK"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZD);
 		printf(ANSI_COLOR_RED"O navio descarregou %d contentores.\n"ANSI_COLOR_RESET,out);
 		//Aumentar o nº de contentores na zona de descarga
 		V(fullDescarga);
@@ -30,8 +31,9 @@ int in = 0;
 		ship.contentoresVazios++;
 		printf(ANSI_COLOR_RED"O navio está a carregar.\n"ANSI_COLOR_RESET);
 		sleep(7);
+		*nmrMinContentoresZC=min(*nmrMinContentoresZC,--*nmrContentoresZC);
+		printf(ANSI_COLOR_PINK"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZC);
 		printf(ANSI_COLOR_RED"O navio carregou %d contentores.\n"ANSI_COLOR_RESET,in);
-		*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,--*nmrContentoresZC);
 		V(emptyCarga);
 		V(mutexCarga);
 		if(ship.contentoresVazios == 50){
@@ -46,8 +48,10 @@ void carregarContentorCamiao() {
 	P(mutexDescarga);
 	printf(ANSI_COLOR_YELLOW"Um camião está a carregar um contentor.\n"ANSI_COLOR_RESET);
 	sleep(5);
+	
+	*nmrMinContentoresZD=min(*nmrMinContentoresZD,--*nmrContentoresZD);
+	printf(ANSI_COLOR_PINK"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZD);
 	printf(ANSI_COLOR_YELLOW "Um camião foi carregado com um contentor.\n"ANSI_COLOR_RESET);
-	*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,--*nmrContentoresZD);
 	//Incrementar o nº de espaços na zona de descarga
 	V(emptyDescarga);
 	V(mutexDescarga);
@@ -60,6 +64,7 @@ void descarregarContentorCamiao() {
 	printf(ANSI_COLOR_YELLOW "Um camião está a descarregar um contentor.\n"ANSI_COLOR_RESET);
 	sleep(4);
 	*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,++*nmrContentoresZC);
+	printf(ANSI_COLOR_PINK"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZC);
 	printf(ANSI_COLOR_YELLOW "Um Camião descarregou um contentor.\n"ANSI_COLOR_RESET);
 	//Aumentar o nº de contentores na zona de carga 
 	V(fullCarga);
