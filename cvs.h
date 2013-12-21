@@ -94,3 +94,6 @@ int *nmrMaxContentoresZC;
 int *nmrMaxContentoresZD;
 int *nmrMinContentoresZC;
 int *nmrMinContentoresZD;
+int *tempoMax;
+int *tempoMin;
+int *tempoMed;
