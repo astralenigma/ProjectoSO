@@ -15,8 +15,7 @@ int main(void){
 		printf("---------------------Menu---------------------\n");
 		printf("----------Opção 1- Iniciar Simulação----------\n");
 		printf("----------Opção 2- Alterar Valores------------\n");
-		printf("----------Opção 3- Estatisticas---------------\n");
-		printf("----------Opção 4- Sair-----------------------\n");
+		printf("----------Opção 3- Sair-----------------------\n");
 		char x;
 		printf("Introduza a opção que deseja efectuar\n");
 		scanf("%s", &x);
@@ -42,9 +41,6 @@ int main(void){
 				}
 				break;
 			case '3':
-				estatisticas();
-				break;
-			case '4':
 				return 0;
 			default : 
 				printf("O caracter introduzido é invalido.\n");
