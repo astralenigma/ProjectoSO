@@ -7,7 +7,7 @@ void inicializarSemaforos(){
 	semaNaviosAEspera = init_sem(0);
 	mutexCarga=init_sem(1);
 	mutexDescarga=init_sem(1);
-	semaCronometroInicio=init_sem(0);
+	//semaCronometroInicio=init_sem(0);
 	semaCronometroFim=init_sem(0);
 }
 //Método que inicia a simulação
