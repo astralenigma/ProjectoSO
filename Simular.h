@@ -30,6 +30,8 @@ simular(){
 	esMedIC=(int*)ptr++;
 	nmrMaxContentoresZC=(int*)ptr++;
 	nmrMaxContentoresZD=(int*)ptr++;
+	nmrMinContentoresZC=(int*)ptr++;
+	nmrMinContentoresZD=(int*)ptr++;
     	//indeciso sobre o que usar
     	//apontador=(tipo do apntador*)ptr++;
     	//Inicializar as variáveis na memória
@@ -43,6 +45,8 @@ simular(){
 	*nmrContentoresZC=0;
 	*nmrMaxContentoresZC=0;
 	*nmrMaxContentoresZD=0;
+	*nmrMinContentoresZC=0;
+	*nmrMinContentoresZD=0;
 	*barcosAtracados=0;
 	*apNmrNaviosAEspera=0;
 	int child_pid[maxChilds];
@@ -54,14 +58,14 @@ simular(){
                                 exit(1);
                         break;
                         case 0: /*child process*/
-                                if (i == 1) {
+                                if (i == 0) {
                                 	printf("Não estás a funcar pq?");
                                         criarNavios();
                                 }
-                                if (i == 2) {
+                                if (i == 1) {
                                         controloNavio();
                                 }
-                                if (i >= 3) {
+                                if (i >= 2) {
                                 	nmrCamiao=i-1;
                                         controloCamiao();
                                 }
@@ -77,7 +81,11 @@ simular(){
                                         printf( "Atracaram %d* Navios.\n"
                                         	"Ficaram %d Navios por atender.\n"
                                         	"Ficaram %d Contentores na Zona de Carga\n"
-                                        	"Ficaram %d Contentores na Zona de Descarga\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD);
+                                        	"Ficaram %d Contentores na Zona de Descarga\n"
+                                        	"Máximo de Contentores na Zona de Descarga: %d\n"
+                                        	"Máximo de Contentores na Zona de Carga: %d\n"
+                                        	"Mínimo de Contentores na Zona de Descarga: %d\n"
+                                        	"Mínimo de Contentores na Zona de Carga: %d\n",*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,*contentoresNaZD,*nmrMaxContentoresZD,*nmrMaxContentoresZC,*nmrMinContentoresZD,*nmrMinContentoresZC);
                                         //rel_sem(mutex);
                                         rel_sem(fullDescarga);
                                         rel_sem(emptyDescarga);
