@@ -109,7 +109,8 @@ simular(){
                                         rel_sem(semaNaviosAEspera);
                                         rel_sem(mutexCarga);
                                         rel_sem(mutexDescarga);
-                                        rel_sem(semaCronometro);
+                                        rel_sem(semaCronometroInicio);
+                                        rel_sem(semaCronometroFim);
                                         shmdt(addr);
                                         shmctl(shmid, IPC_RMID, 0);
                                 }
