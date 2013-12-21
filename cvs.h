@@ -92,3 +92,5 @@ int *nmrContentoresZD;
 int *nmrContentoresZC;
 int *nmrMaxContentoresZC;
 int *nmrMaxContentoresZD;
+int *nmrMinContentoresZC;
+int *nmrMinContentoresZD;
