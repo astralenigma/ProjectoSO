@@ -34,9 +34,9 @@ simular(){
 	nmrMaxContentoresZD=(int*)ptr++;
 	nmrMinContentoresZC=(int*)ptr++;
 	nmrMinContentoresZD=(int*)ptr++;
-	tempoMax=(double*)ptr++;
-	tempoMed=(double*)ptr++;
-	tempoMin=(double*)ptr++;
+	tempoMax=(int*)ptr++;
+	tempoMed=(int*)ptr++;
+	tempoMin=(int*)ptr++;
     	//indeciso sobre o que usar
     	//apontador=(tipo do apntador*)ptr++;
     	//Inicializar as variáveis na memória
@@ -94,9 +94,9 @@ simular(){
                                         	"Máximo de Contentores na Zona de Carga: %d\n"
                                         	"Mínimo de Contentores na Zona de Descarga: %d\n"
                                         	"Mínimo de Contentores na Zona de Carga: %d\n"
-                                        	"Tempo Máximo de Espera do Navio: %.f\n"
-                                        	"Tempo Médio de Espera do Navio: %.f\n"
-                                        	"Tempo Minimo de Espera do Navio:%.f\n",
+                                        	"Tempo Máximo de Espera do Navio: %d\n"
+                                        	"Tempo Médio de Espera do Navio: %d\n"
+                                        	"Tempo Minimo de Espera do Navio:%d\n",
                                         	*barcosAtracados,*apNmrNaviosAEspera,*contentoresNaZC,
                                         	*contentoresNaZD,*nmrMaxContentoresZD,*nmrMaxContentoresZC,
                                         	*nmrMinContentoresZD,*nmrMinContentoresZC,*tempoMax,
@@ -141,8 +141,8 @@ cronometro(){
 	P(semaCronometroFim);
 	time_t b=time(NULL);
 	double seconds=difftime(b,a);
-	*tempoMax=max(*tempoMax,seconds);;
-	*tempoMin=min(*tempoMin,seconds);
-	*tempoMed=((*tempoMed)+seconds)/2;
+	*tempoMax=(int*)max(*tempoMax,seconds);;
+	*tempoMin=(int*)min(*tempoMin,seconds);
+	*tempoMed=(int*)((*tempoMed)+seconds)/2;
 	return;
 }
