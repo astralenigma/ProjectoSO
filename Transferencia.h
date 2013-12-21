@@ -10,7 +10,8 @@ void descarregarContentorNavio() {
 		ship.contentoresCheios--;
 		printf(ANSI_COLOR_RED"O navio está a descarregar\n"ANSI_COLOR_RESET);
 		sleep(5);
-		*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,++*nmrContentoresZD);
+		++*nmrContentoresZD;
+		*nmrMaxContentoresZD=max(*nmrMaxContentoresZD,*nmrContentoresZD);
 		printf(ANSI_COLOR_MAGENTA"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZD);
 		printf(ANSI_COLOR_RED"O navio descarregou %d contentores.\n"ANSI_COLOR_RESET,out);
 		//Aumentar o nº de contentores na zona de descarga
@@ -31,7 +32,8 @@ int in = 0;
 		ship.contentoresVazios++;
 		printf(ANSI_COLOR_RED"O navio está a carregar.\n"ANSI_COLOR_RESET);
 		sleep(7);
-		*nmrMinContentoresZC=min(*nmrMinContentoresZC,--*nmrContentoresZC);
+		--*nmrContentoresZC;
+		*nmrMinContentoresZC=min(*nmrMinContentoresZC,*nmrContentoresZC);
 		printf(ANSI_COLOR_MAGENTA"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZC);
 		printf(ANSI_COLOR_RED"O navio carregou %d contentores.\n"ANSI_COLOR_RESET,in);
 		V(emptyCarga);
@@ -48,8 +50,8 @@ void carregarContentorCamiao() {
 	P(mutexDescarga);
 	printf(ANSI_COLOR_YELLOW"Um camião está a carregar um contentor.\n"ANSI_COLOR_RESET);
 	sleep(5);
-	
-	*nmrMinContentoresZD=min(*nmrMinContentoresZD,--*nmrContentoresZD);
+	--*nmrContentoresZD;
+	*nmrMinContentoresZD=min(*nmrMinContentoresZD,*nmrContentoresZD);
 	printf(ANSI_COLOR_MAGENTA"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZD);
 	printf(ANSI_COLOR_YELLOW "Um camião foi carregado com um contentor.\n"ANSI_COLOR_RESET);
 	//Incrementar o nº de espaços na zona de descarga
@@ -63,7 +65,8 @@ void descarregarContentorCamiao() {
 	P(mutexCarga);	
 	printf(ANSI_COLOR_YELLOW "Um camião está a descarregar um contentor.\n"ANSI_COLOR_RESET);
 	sleep(4);
-	*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,++*nmrContentoresZC);
+	++*nmrContentoresZC;
+	*nmrMaxContentoresZC=max(*nmrMaxContentoresZC,*nmrContentoresZC);
 	printf(ANSI_COLOR_MAGENTA"A zona tem agora %d contentores.\n"ANSI_COLOR_RESET,*nmrContentoresZC);
 	printf(ANSI_COLOR_YELLOW "Um Camião descarregou um contentor.\n"ANSI_COLOR_RESET);
 	//Aumentar o nº de contentores na zona de carga 
