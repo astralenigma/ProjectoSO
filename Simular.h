@@ -141,8 +141,8 @@ cronometro(){
 	P(semaCronometroFim);
 	time_t b=time(NULL);
 	double seconds=difftime(b,a);
-	*tempoMax=(int*)max(*tempoMax,seconds);
-	*tempoMin=(int*)min(*tempoMin,seconds);
-	*tempoMed=(int*)((*tempoMed)+seconds)/2;
+	*tempoMax=(int)max(*tempoMax,seconds);
+	*tempoMin=(int)min(*tempoMin,seconds);
+	*tempoMed=(int)((*tempoMed)+seconds)/2;
 	return;
 }
