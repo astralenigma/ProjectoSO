@@ -11,12 +11,16 @@ package so.tpwin;
 public class Pergunta {
 
     private String pergunta;
+    private int nmrPerguntas;
     private int respostaCerta;
 
-    public Pergunta() {
-        this.pergunta = "othersomething";
-        this.respostaCerta = 0;
+    public Pergunta(String pergunta, int nmrPerguntas, int respostaCerta) {
+        this.pergunta = pergunta;
+        this.nmrPerguntas = nmrPerguntas;
+        this.respostaCerta = respostaCerta;
     }
+
+    
 
     public int getNmrRespostas() {
         return 3;
