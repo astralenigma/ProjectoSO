@@ -12,15 +12,30 @@ import java.util.ArrayList;
  */
 public class Exame {
 
-    ArrayList<Pergunta> perguntas = new ArrayList<>();
+    private ArrayList<Pergunta> perguntas = new ArrayList<>();
+    private int respostasCertas;
 
     public Exame() {
         for (int i = 0; i < 10; i++) {
             perguntas.add(i, new Pergunta());
         }
+        respostasCertas=0;
     }
 
-    public boolean passou(int respostasCertas) {
+    public int getNmrPerguntas(){
+        return perguntas.size();
+    }
+    
+    public Pergunta getPergunta(int i) {
+        return perguntas.get(i);
+    }
+
+    public boolean passou() {
         return respostasCertas > 7;
+    }
+    public void responder(int resposta,int i){
+        if (resposta==perguntas.get(i).getRespostaCerta()) {
+            respostasCertas++;
+        }
     }
 }

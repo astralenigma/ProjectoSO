@@ -16,45 +16,50 @@ public class Examinando extends Thread {
 
     private int id;
     private Exame teste;
+
     public Examinando(int id) {
         this.id = id;
-        teste=new Exame();
+        teste = new Exame();
     }
-public void responderAPergunta(){
-    for (int i = 0; i < teste.getNmrPerguntas(); i++) {
-        teste.
-        responder(teste.getPergunta(i).getNmrRespostas());
+
+    public void responderAPergunta() throws InterruptedException {
+        for (int i = 0; i < teste.getNmrPerguntas(); i++) {
+            teste.responder(responder(teste.getPergunta(i).getNmrRespostas()),i);
+        }
     }
-    
-}
-    public char responder(int i) throws InterruptedException {
+
+    public boolean avaliar() {
+        return teste.passou();
+    }
+
+    public int responder(int i) throws InterruptedException {
         Random r = new Random();
         Thread.sleep(r.nextInt(8) * 1000 + 2000);
-        
-        switch (r.nextInt(i)) {
-            case 0:
-                return 'A';
-            case 1:
-                return 'B';
-            case 2:
-                return 'C';
-            case 3:
-                return 'D';
-                
-            default:
-                return 'H';
-        }
+
+//        switch (r.nextInt(i)) {
+//            case 0:
+//                return 'A';
+//            case 1:
+//                return 'B';
+//            case 2:
+//                return 'C';
+//            case 3:
+//                return 'D';
+//
+//            default:
+//                return 'H';
+//        }
+        return r.nextInt(i);
     }
 
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
             try {
-                System.out.println("O aluno "+id+" respondeu: "+responder(4));
+                System.out.println("O aluno " + id + " respondeu: " + responder(4));
             } catch (InterruptedException ex) {
                 Logger.getLogger(Examinando.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-    
 }
