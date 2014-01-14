@@ -11,22 +11,23 @@ package so.tpwin;
 public class Pergunta {
 
     private String pergunta;
-    private int nmrPerguntas;
-    private int respostaCerta;
+    private char respostaCerta;
 
-    public Pergunta(String pergunta, int nmrPerguntas, int respostaCerta) {
+    public Pergunta(String pergunta, char respostaCerta) {
         this.pergunta = pergunta;
-        this.nmrPerguntas = nmrPerguntas;
         this.respostaCerta = respostaCerta;
     }
-
-    
 
     public int getNmrRespostas() {
         return 3;
     }
 
-    public int getRespostaCerta() {
+    public char getRespostaCerta() {
         return respostaCerta;
+    }
+
+    @Override
+    public String toString() {
+        return pergunta;
     }
 }

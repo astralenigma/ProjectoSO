@@ -1,10 +1,10 @@
+package so.tpwin;
 
 import java.util.ArrayList;
-import so.tpwin.Pergunta;
 
 public class ListaPerguntas {
 
-    private ArrayList<Pergunta> perguntas;
+    private static ArrayList<Pergunta> perguntas;
 
     public ListaPerguntas() {
         perguntas = new ArrayList<>();
@@ -110,5 +110,13 @@ public class ListaPerguntas {
                 + "		A-Circular com especial prudência e velocidade moderada.\n"
                 + "		B-Circular o mais à esquerda possível.\n"
                 + "		C-Ligar as luzes de estrada para ver e ser visto pelos restantes utentes.", 'A'));
+    }
+
+    public static Pergunta getPergunta(int i) {
+        return perguntas.get(i);
+    }
+
+    public static int getNmrPerguntas() {
+        return perguntas.size();
     }
 }

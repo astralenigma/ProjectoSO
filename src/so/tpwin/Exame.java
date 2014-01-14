@@ -5,6 +5,7 @@
 package so.tpwin;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -16,8 +17,19 @@ public class Exame {
     private int respostasCertas;
 
     public Exame() {
-        for (int i = 0; i < 10; i++) {
-            perguntas.add(i, new Pergunta());
+        Random rd=new Random();
+        ArrayList<Integer> al=new ArrayList<>();
+//        );
+        al.add(rd.nextInt(ListaPerguntas.getNmrPerguntas()));
+        for (int i = 0; i < 9; i++) {
+            int j;
+            do{
+            j = rd.nextInt(ListaPerguntas.getNmrPerguntas());
+            }while(al.contains(j));
+            al.add(j);
+        }
+       while(!al.isEmpty()){
+            perguntas.add(ListaPerguntas.getPergunta(al.remove(0)));
         }
         respostasCertas=0;
     }

@@ -14,8 +14,10 @@ public class SOTPWin {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ListaPerguntas listaPerguntas = new ListaPerguntas();
         System.out.println("Bem vindo ao centro de exames.");
-         new Examinando(1).start();
-         new Examinando(2).start();
+        Barreira b=new Barreira(2);
+         new Examinando(1,b).start();
+         new Examinando(2,b).start();
     }
 }
