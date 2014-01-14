@@ -5,7 +5,6 @@ import so.tpwin.Pergunta;
 public class ListaPerguntas {
 
     private ArrayList<Pergunta> perguntas;
-    private char respostaCerta;
 
     public ListaPerguntas() {
         perguntas = new ArrayList<>();
