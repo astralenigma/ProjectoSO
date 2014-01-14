@@ -16,3 +16,6 @@
 *.exe
 *.out
 *.app
+/build/
+/dist/
+/nbproject/private/
