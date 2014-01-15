@@ -74,12 +74,12 @@ public class Examinando extends Thread {
     }
 
     public void avaliacao() {
-        String str="Avaliacao do aluno " + id+"\nAcertou em " + (teste.getNmrPerguntas() - perguntasErradas.size());
+        String str = "Avaliacao do aluno " + id + "\nAcertou em " + (teste.getNmrPerguntas() - perguntasErradas.size());
         while (!perguntasErradas.isEmpty()) {
             Pergunta p = perguntasErradas.remove(0);
-            str="\n"+p.avaliarResposta();
+            str += "\n" + p.avaliarResposta()+"\n";
         }
-        System.out.println(str+"\n"+avaliar());
+        System.out.println(str + "\n" + avaliar());
     }
 
     @Override

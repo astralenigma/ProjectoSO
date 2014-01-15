@@ -20,7 +20,7 @@ public class SOTPWin {
         System.out.println("Bem vindo ao centro de exames.");
         Barreira b=new Barreira(nmrExaminandos);
         for (int i = 0; i < nmrExaminandos; i++) {
-            new Examinando(i,b).start();
+            new Examinando(i+1,b).start();
         }
     }
 }

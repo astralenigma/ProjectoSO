@@ -31,10 +31,11 @@ public class Pergunta {
     public String avaliarResposta(){
         StringTokenizer st=new StringTokenizer(pergunta, "\n");
         String avaliacao=st.nextToken();
+        st.nextToken();
         switch(respostaCerta){
             case 'C':st.nextToken();
             case 'B':st.nextToken();
-            case 'A':return "A resposta à pergunta "+avaliacao+" era:\n"+st.nextToken();
+            case 'A':return "A resposta à pergunta \""+avaliacao+"\" era:\n"+st.nextToken();
             default:return "";
         }
     }
