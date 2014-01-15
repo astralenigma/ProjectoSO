@@ -20,29 +20,31 @@ public class Examinando extends Thread {
     private Exame teste;
     private Barreira barreira;
     private ArrayList<Pergunta> perguntasErradas;
-    public Examinando(int id,Barreira barreira) {
+
+    public Examinando(int id, Barreira barreira) {
         this.id = id;
         teste = new Exame();
-        this.barreira=barreira;
-        perguntasErradas=new ArrayList<>();
+        this.barreira = barreira;
+        perguntasErradas = new ArrayList<>();
     }
 
     public void responderAPergunta() throws InterruptedException {
         Calendar tempoInicial = Calendar.getInstance();
         int i;
         for (i = 0; i < teste.getNmrPerguntas(); i++) {
-            if (Calendar.getInstance().getTimeInMillis()-tempoInicial.getTimeInMillis()>=6000) {
+            if ((Calendar.getInstance().getTimeInMillis() - tempoInicial.getTimeInMillis()) >= 60000) {
+                while (i < teste.getNmrPerguntas()) {
+                    perguntasErradas.add(teste.getPergunta(i++));
+                }
                 break;
             }
-            char resposta=responder(teste.getPergunta(i).getNmrRespostas());
+            System.out.println("Aluno " + id + " a pensar.");
+            char resposta = responder(teste.getPergunta(i).getNmrRespostas());
             System.out.println(teste.getPergunta(i));
-            System.out.println("O aluno "+id+" respondeu "+resposta);
-            if(teste.responder(resposta,i)){
+            System.out.println("O aluno " + id + " respondeu " + resposta);
+            if (teste.responder(resposta, i)) {
                 perguntasErradas.add(teste.getPergunta(i));
             }
-        }
-        while(i<teste.getNmrPerguntas()){
-            perguntasErradas.add(teste.getPergunta(i));
         }
     }
 
@@ -71,21 +73,25 @@ public class Examinando extends Thread {
         }
     }
 
+    public void avaliacao() {
+        String str = "Avaliacao do aluno " + id + "\nAcertou em " + (teste.getNmrPerguntas() - perguntasErradas.size());
+        while (!perguntasErradas.isEmpty()) {
+            Pergunta p = perguntasErradas.remove(0);
+            str += "\n" + p.avaliarResposta()+"\n";
+        }
+        System.out.println(str + "\n" + avaliar());
+    }
+
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                barreira.esperar();
-                responderAPergunta();
-                System.out.println("Acertou em "+(10-perguntasErradas.size()));
-                while (!perguntasErradas.isEmpty()) {
-                    Pergunta p=perguntasErradas.remove(0);
-                    System.out.println(p.avaliarResposta());
-                }
-                System.out.println(avaliar());
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Examinando.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            barreira.esperar();
+            responderAPergunta();
+            barreira.esperar();
+            avaliacao();
+
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Examinando.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

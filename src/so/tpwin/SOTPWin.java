@@ -15,9 +15,12 @@ public class SOTPWin {
      */
     public static void main(String[] args) {
         ListaPerguntas listaPerguntas = new ListaPerguntas();
+        int nmrExaminandos=5;
+        
         System.out.println("Bem vindo ao centro de exames.");
-        Barreira b=new Barreira(2);
-         new Examinando(1,b).start();
-         new Examinando(2,b).start();
+        Barreira b=new Barreira(nmrExaminandos);
+        for (int i = 0; i < nmrExaminandos; i++) {
+            new Examinando(i+1,b).start();
+        }
     }
 }
