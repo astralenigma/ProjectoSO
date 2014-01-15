@@ -29,15 +29,20 @@ public class Examinando extends Thread {
 
     public void responderAPergunta() throws InterruptedException {
         Calendar tempoInicial = Calendar.getInstance();
-        Calendar tempoActual = Calendar.getInstance();
-        for (int i = 0; i < teste.getNmrPerguntas(); i++) {
-             
-            System.out.println(teste.getPergunta(i));
+        int i;
+        for (i = 0; i < teste.getNmrPerguntas(); i++) {
+            if (Calendar.getInstance().getTimeInMillis()-tempoInicial.getTimeInMillis()>6000) {
+                break;
+            }
             char resposta=responder(teste.getPergunta(i).getNmrRespostas());
+            System.out.println(teste.getPergunta(i));
             System.out.println("O aluno "+id+" respondeu "+resposta);
             if(teste.responder(resposta,i)){
                 perguntasErradas.add(teste.getPergunta(i));
             }
+        }
+        while(i<teste.getNmrPerguntas()){
+            perguntasErradas.add(teste.getPergunta(i));
         }
     }
 
