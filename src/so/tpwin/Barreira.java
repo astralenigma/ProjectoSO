@@ -13,16 +13,16 @@ import java.util.logging.Logger;
  */
 public class Barreira {
     private int examinandosNoExame;
-    private int examinandosQueAcabaramOExame;
+    private int examinandosAEspera;
 
     public Barreira(int examinandosNoExame) {
         this.examinandosNoExame = examinandosNoExame;
-        this.examinandosQueAcabaramOExame = 0;
+        this.examinandosAEspera = 0;
     }
     
-    public synchronized void acabouOExame(){
-        examinandosQueAcabaramOExame++;
-        if(examinandosNoExame!=examinandosQueAcabaramOExame){
+    public synchronized void esperar(){
+        examinandosAEspera++;
+        if(examinandosNoExame!=examinandosAEspera){
             try {
                 wait();
             } catch (InterruptedException ex) {
@@ -30,7 +30,7 @@ public class Barreira {
             }
         }else{
             notifyAll();
-            examinandosQueAcabaramOExame=0;
+            examinandosAEspera=0;
         }
     }
 }
