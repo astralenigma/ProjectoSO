@@ -4,6 +4,8 @@
  */
 package so.tpwin;
 
+import java.util.StringTokenizer;
+
 /**
  *
  * @author Rui
@@ -24,6 +26,17 @@ public class Pergunta {
 
     public char getRespostaCerta() {
         return respostaCerta;
+    }
+    
+    public String avaliarResposta(){
+        StringTokenizer st=new StringTokenizer(pergunta, "\n");
+        String avaliacao=st.nextToken();
+        switch(respostaCerta){
+            case 'C':st.nextToken();
+            case 'B':st.nextToken();
+            case 'A':return "A resposta à pergunta "+avaliacao+" era:\n"+st.nextToken();
+            default:return "";
+        }
     }
 
     @Override
