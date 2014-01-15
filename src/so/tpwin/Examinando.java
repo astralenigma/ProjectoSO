@@ -31,7 +31,7 @@ public class Examinando extends Thread {
         Calendar tempoInicial = Calendar.getInstance();
         int i;
         for (i = 0; i < teste.getNmrPerguntas(); i++) {
-            if (Calendar.getInstance().getTimeInMillis()-tempoInicial.getTimeInMillis()>6000) {
+            if (Calendar.getInstance().getTimeInMillis()-tempoInicial.getTimeInMillis()>=6000) {
                 break;
             }
             char resposta=responder(teste.getPergunta(i).getNmrRespostas());
