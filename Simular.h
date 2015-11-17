@@ -17,7 +17,7 @@ simular(){
 	shmid = shmget(SHMKEY, 128, 0777|IPC_CREAT);
 	addr = (char*) shmat(shmid, 0, 0);
 	//A alocar as variáveis na memória
-	int *ptr;
+	//int *ptr; //Se estiver correcto já existe globalmente.
 	ptr = (int*) addr;
 	apNmrNaviosAEspera=(int*)ptr++;
 	barcosAtracados=(int*)ptr++;
